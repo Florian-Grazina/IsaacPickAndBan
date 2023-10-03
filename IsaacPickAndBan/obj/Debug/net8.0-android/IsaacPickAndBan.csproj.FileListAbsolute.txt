@@ -1039,3 +1039,4 @@ C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\b2_yum_heart.png
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.dll
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.pdb
+C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\IsaacPickAndBan.sourcelink.json
