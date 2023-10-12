@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IsaacPickAndBan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+62afe917272af9a757148fb978ffe1d123115a0a")]
 [assembly: System.Reflection.AssemblyProductAttribute("IsaacPickAndBan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IsaacPickAndBan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

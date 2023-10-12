@@ -5,17 +5,15 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string Extension { get; set; }
-        public string Image { get; set; }
         public string Ethernal { get; set; }
+        public string MainImage { get; set; }
+        public string EthernalImage { get; set; }
 
 
-        public Card(int id, string name, string extension, string ethernal)
+        public void GenerateImage()
         {
-            Id = id;
-            Name = name;
-            Extension = extension;
-            Image = $"{extension}_{name}.png";
-            Ethernal = $"{extension}_{ethernal}.png";
+            MainImage = $"{Extension}_{Name}.png";
+            EthernalImage = $"{Extension}_{Ethernal}.png";
         }
     }
 }

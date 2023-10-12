@@ -7,35 +7,51 @@
              x:Class="IsaacPickAndBan.MainPage">
 
     <Grid>
-        <!--LIST OF CARDS-->
-        <ScrollView BackgroundColor="White">
-            <FlexLayout BindableLayout.ItemsSource="{Binding ListOfCards}"
-                        JustifyContent="SpaceBetween"
-                        Wrap="Wrap"
-                        Direction="Row">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="model:Card">
-                    
-                        <Grid RowDefinitions="150"
-                                Margin="5">
-                            <Image Source="{Binding Image}"/>
-                            <Button BackgroundColor="Transparent"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=FocusingOnCardCommand}"
-                                    CommandParameter="{Binding .}"/>
-                        </Grid>
-                    
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+<!--BACKGROUND-->
+        <Image Source="background.jpg"
+               Aspect="AspectFill"/>
+        
+        <ScrollView BackgroundColor="Transparent">
+            <StackLayout>
+
+<!--SEARCH BAR-->
+                <Entry Placeholder="Search"
+                       TextChanged="Entry_TextChanged"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="Black"
+                       BackgroundColor="White"
+                       Opacity="0.7"/>
+
+<!--LIST OF CARDS-->
+                <FlexLayout BindableLayout.ItemsSource="{Binding ListOfCards}"
+                            JustifyContent="SpaceBetween"
+                            Wrap="Wrap"
+                            Direction="Row">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:Card">
+
+                            <Grid RowDefinitions="150"
+                                    Margin="5">
+                                <Image Source="{Binding MainImage}"/>
+                                <Button BackgroundColor="Transparent"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=FocusingOnCardCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Grid>
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
         </ScrollView>
 
-        <!--CARD DETAILS-->
+<!--CARD DETAILS-->
         <Grid IsVisible="{Binding IsFocused}">
             <Button BackgroundColor="Black"
                     Opacity="0.85"
                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=ClearFocusCommand}"/>
             <ImageButton x:Name="focusedCardImageButton"
-                         Source="{Binding FocusedCard.Image}"
+                         Source="{Binding FocusedCard.MainImage}"
                          HeightRequest="460"
                          Margin="30"/>
         </Grid>

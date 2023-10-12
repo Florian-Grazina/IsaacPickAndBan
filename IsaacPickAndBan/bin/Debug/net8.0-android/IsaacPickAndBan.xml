@@ -9,6 +9,9 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
+        <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.ListOfCards">
+            <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.listOfCards"/>
+        </member>
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.IsFocused">
             <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.isFocused"/>
         </member>
@@ -33,6 +36,9 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ListOfCards">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ListOfCards" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFocused">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFocused" generated properties.</summary>
         </member>
@@ -44,6 +50,9 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ListOfCards">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ListOfCards" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFocused">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFocused" generated properties.</summary>

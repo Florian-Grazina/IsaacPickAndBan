@@ -1,16 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using IsaacPickAndBan.Database;
 using IsaacPickAndBan.Models;
-using Microsoft.Maui.Storage;
-using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace IsaacPickAndBan.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
         // properties
-        public List<Card> ListOfCards { get; set; }
+        [ObservableProperty]
+        public List<Card> listOfCards;
 
         [ObservableProperty]
         public bool isFocused = false;
@@ -22,7 +21,7 @@ namespace IsaacPickAndBan.ViewModels
         // constructor
         public MainViewModel()
         {
-            InitMainPage();
+            ListOfCards = Data.ListOfCards;
         }
 
 
@@ -44,12 +43,6 @@ namespace IsaacPickAndBan.ViewModels
         {
             IsFocused = false;
             FocusedCard = null;
-        }
-
-        public void InitMainPage()
-        {
-            string cardsJson = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "cards.json");
-            ListOfCards = JsonSerializer.Deserialize<List<Card>>(cardsJson);
         }
     }
 }

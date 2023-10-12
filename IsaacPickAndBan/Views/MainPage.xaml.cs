@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using IsaacPickAndBan.Database;
 using IsaacPickAndBan.ViewModels;
 
 namespace IsaacPickAndBan
@@ -6,9 +6,6 @@ namespace IsaacPickAndBan
     public partial class MainPage : ContentPage
     {
         // properties
-        public double ScreenWidth { get; } = DeviceDisplay.MainDisplayInfo.Width;
-        public double ScreenHeight { get; } = DeviceDisplay.MainDisplayInfo.Width;
-
         private readonly MainViewModel _viewModel;
 
 
@@ -25,6 +22,11 @@ namespace IsaacPickAndBan
         public void TurnFocusCard()
         {
             focusedCardImageButton.Source = "b2_the_d6.png";
+        }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewModel.ListOfCards = Data.ListOfCards.Where(card => card.Name.Contains(e.NewTextValue)).ToList();
         }
     }
 }
