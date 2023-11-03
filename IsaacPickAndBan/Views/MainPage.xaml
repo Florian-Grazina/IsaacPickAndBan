@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IsaacPickAndBan.ViewModels"
              xmlns:model="clr-namespace:IsaacPickAndBan.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType="local:MainViewModel"
              x:Class="IsaacPickAndBan.MainPage">
 
@@ -10,18 +11,23 @@
 <!--BACKGROUND-->
         <Image Source="background.jpg"
                Aspect="AspectFill"/>
-        
+        <Rectangle Fill="Black"
+                   Opacity="0.2"/>
+
         <ScrollView BackgroundColor="Transparent">
             <StackLayout>
 
 <!--SEARCH BAR-->
-                <Entry Placeholder="Search"
-                       TextChanged="Entry_TextChanged"
-                       FontAttributes="Bold"
-                       FontSize="20"
-                       TextColor="Black"
-                       BackgroundColor="White"
-                       Opacity="0.7"/>
+                <Grid>
+                    <Rectangle Fill="black"
+                               Opacity="0.5"/>
+                    <Entry Placeholder="Search"
+                           PlaceholderColor="White"
+                           TextChanged="Entry_TextChanged"
+                           FontFamily="IsaacFont"
+                           FontSize="25"
+                           TextColor="White"/>
+                </Grid>
 
 <!--LIST OF CARDS-->
                 <FlexLayout BindableLayout.ItemsSource="{Binding ListOfCards}"
@@ -46,15 +52,39 @@
         </ScrollView>
 
 <!--CARD DETAILS-->
-        <Grid IsVisible="{Binding IsFocused}">
+        <Grid x:Name="cardFrame"
+              IsVisible="{Binding IsFocused}">
             <Button BackgroundColor="Black"
-                    Opacity="0.85"
-                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=ClearFocusCommand}"/>
-            <ImageButton x:Name="focusedCardImageButton"
-                         Source="{Binding FocusedCard.MainImage}"
-                         HeightRequest="460"
-                         Margin="30"/>
+                    Opacity="0.50"
+                    CornerRadius="1"
+                    Command="{Binding ClearFocusCommand}"/>
+            <Grid HeightRequest="460"
+                  Margin="30">
+                <Image Source="{Binding FocusedCard.MainImage}"
+                       IsVisible="{Binding IsNotFlipped}"/>
+                <Image Source="{Binding FocusedCard.EthernalImage}"
+                       IsVisible="{Binding IsFlipped}"/>
+                <Button BackgroundColor="Transparent"
+                        Clicked="FlipCard"/>
+            </Grid>
         </Grid>
+<!--MENU-->
+        <!--<Grid ColumnDefinitions="*,*"
+              HeightRequest="60"
+              VerticalOptions="End">
+            <Rectangle Grid.ColumnSpan="2"
+                       Scale="1.05"
+                       Fill="black"
+                       Opacity="0.9"/>
+            <Button Text="Home"
+                    HeightRequest="50"
+                    WidthRequest="150"/>
+            <Button Grid.Column="1"
+                    FontSize="24"
+                    Text="Pick&amp;Ban"
+                    HeightRequest="50"
+                    WidthRequest="150"/>
+        </Grid>-->
     </Grid>
 
 </ContentPage>

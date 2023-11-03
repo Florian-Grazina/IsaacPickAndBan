@@ -8,12 +8,19 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.ListOfCards">
             <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.listOfCards"/>
         </member>
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.IsFocused">
             <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.isFocused"/>
+        </member>
+        <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.IsFlipped">
+            <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.isFlipped"/>
+        </member>
+        <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.IsNotFlipped">
+            <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.isNotFlipped"/>
         </member>
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.FocusedCard">
             <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.focusedCard"/>
@@ -23,6 +30,12 @@
         </member>
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.FocusingOnCardCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:IsaacPickAndBan.ViewModels.MainViewModel.FocusingOnCard(IsaacPickAndBan.Models.Card)"/>.</summary>
+        </member>
+        <member name="F:IsaacPickAndBan.ViewModels.MainViewModel.flipCardCommand">
+            <summary>The backing field for <see cref="P:IsaacPickAndBan.ViewModels.MainViewModel.FlipCardCommand"/>.</summary>
+        </member>
+        <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.FlipCardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:IsaacPickAndBan.ViewModels.MainViewModel.FlipCard"/>.</summary>
         </member>
         <member name="F:IsaacPickAndBan.ViewModels.MainViewModel.clearFocusCommand">
             <summary>The backing field for <see cref="P:IsaacPickAndBan.ViewModels.MainViewModel.ClearFocusCommand"/>.</summary>
@@ -42,6 +55,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFocused">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFocused" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFlipped">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFlipped" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsNotFlipped">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsNotFlipped" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FocusedCard">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FocusedCard" generated properties.</summary>
         </member>
@@ -56,6 +75,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFocused">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFocused" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFlipped">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFlipped" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotFlipped">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotFlipped" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FocusedCard">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FocusedCard" generated properties.</summary>

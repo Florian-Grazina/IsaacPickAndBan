@@ -15,6 +15,12 @@ namespace IsaacPickAndBan.ViewModels
         public bool isFocused = false;
 
         [ObservableProperty]
+        public bool isFlipped = false;
+        
+        [ObservableProperty]
+        public bool isNotFlipped = true;
+
+        [ObservableProperty]
         public Card focusedCard;
 
 
@@ -33,15 +39,19 @@ namespace IsaacPickAndBan.ViewModels
             FocusedCard = focusedCard;
         }
 
-        public string TurnFocusCard()
+        [RelayCommand]
+        public void FlipCard()
         {
-            return FocusedCard.Ethernal;
+            IsFlipped = !IsFlipped;
+            IsNotFlipped = !IsNotFlipped;
         }
 
         [RelayCommand]
         public void ClearFocus()
         {
             IsFocused = false;
+            IsFlipped = false;
+            IsNotFlipped = true;
             FocusedCard = null;
         }
     }

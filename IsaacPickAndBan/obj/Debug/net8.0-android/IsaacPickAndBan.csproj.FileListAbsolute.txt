@@ -1039,7 +1039,6 @@ C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.dll
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.pdb
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\IsaacPickAndBan.sourcelink.json
-C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\b2_blue_baby.png
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\b2_eden.png
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\b2_eve.png
@@ -1097,3 +1096,5 @@ C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\g2_the_keeper.png
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\g2_apollyon.png
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\drawable\background.jpg
+C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
+C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\f\Font_soulsV2_Body-Regular.ttf
