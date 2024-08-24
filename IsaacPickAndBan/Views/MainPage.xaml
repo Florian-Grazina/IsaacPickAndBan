@@ -69,7 +69,7 @@
             </Grid>
         </Grid>
 <!--MENU-->
-        <!--<Grid ColumnDefinitions="*,*"
+        <Grid ColumnDefinitions="*,*"
               HeightRequest="60"
               VerticalOptions="End">
             <Rectangle Grid.ColumnSpan="2"
@@ -84,7 +84,7 @@
                     Text="Pick&amp;Ban"
                     HeightRequest="50"
                     WidthRequest="150"/>
-        </Grid>-->
+        </Grid>
     </Grid>
 
 </ContentPage>
