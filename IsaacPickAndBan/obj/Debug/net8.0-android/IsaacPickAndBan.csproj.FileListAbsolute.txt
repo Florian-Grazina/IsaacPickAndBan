@@ -2201,3 +2201,14 @@ C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndB
 C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable\splash.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\mipmap-hdpi\appicon_round.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\mipmap-mdpi\appicon_round.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\mipmap-xhdpi\appicon_round.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\mipmap-xxhdpi\appicon_round.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\r\mipmap-xxxhdpi\appicon_round.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable-hdpi\isaac_head.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable-mdpi\isaac_head.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable-xhdpi\isaac_head.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxhdpi\isaac_head.png
+C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxxhdpi\isaac_head.png

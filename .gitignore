@@ -2,7 +2,8 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/IsaacPickAndBan/FileContentIndex/30ad90c9-ae70-48d6-91eb-3df2be4b2f00.vsidx
-/.vs/IsaacPickAndBan/FileContentIndex/6a718ae8-8171-4630-8bd9-3e10f3c3da33.vsidx
-/.vs/IsaacPickAndBan/FileContentIndex/bd60ee67-70ff-4da7-a3df-34882ada2c07.vsidx
-/.vs/IsaacPickAndBan/FileContentIndex/bd60ee67-70ff-4da7-a3df-34882ada2c07.vsidx
+/.vs
+.vs
+bin
+obj
+packages
