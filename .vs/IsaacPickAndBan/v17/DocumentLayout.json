@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1656,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,10 +49,6 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainPage.xaml",
@@ -62,8 +58,7 @@
               "RelativeToolTip": "IsaacPickAndBan\\Views\\MainPage.xaml",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAFUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-06T15:50:23.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T15:50:23.914Z"
             },
             {
               "$type": "Document",
@@ -75,8 +70,7 @@
               "RelativeToolTip": "IsaacPickAndBan\\Models\\Card.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T15:21:07.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T15:21:07.535Z"
             },
             {
               "$type": "Document",
@@ -88,8 +82,7 @@
               "RelativeToolTip": "IsaacPickAndBan\\Database\\Data.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T15:21:05.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T15:21:05.554Z"
             },
             {
               "$type": "Document",
