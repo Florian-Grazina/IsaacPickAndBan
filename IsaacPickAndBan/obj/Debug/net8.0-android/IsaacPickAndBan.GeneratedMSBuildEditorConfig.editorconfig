@@ -12,35 +12,35 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IsaacPickAndBan
-build_property.ProjectDir = C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\
+build_property.ProjectDir = C:\Users\fgrazina.PPI\Source\repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/Flori/Desktop/Projects/IsaacPickAndBan/IsaacPickAndBan/App.xaml]
+[C:/Users/fgrazina.PPI/Source/repos/Florian-Grazina/IsaacPickAndBan/IsaacPickAndBan/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IsaacPickAndBan.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Flori/Desktop/Projects/IsaacPickAndBan/IsaacPickAndBan/AppShell.xaml]
+[C:/Users/fgrazina.PPI/Source/repos/Florian-Grazina/IsaacPickAndBan/IsaacPickAndBan/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IsaacPickAndBan.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Flori/Desktop/Projects/IsaacPickAndBan/IsaacPickAndBan/Resources/Styles/Colors.xaml]
+[C:/Users/fgrazina.PPI/Source/repos/Florian-Grazina/IsaacPickAndBan/IsaacPickAndBan/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IsaacPickAndBan.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Flori/Desktop/Projects/IsaacPickAndBan/IsaacPickAndBan/Resources/Styles/Styles.xaml]
+[C:/Users/fgrazina.PPI/Source/repos/Florian-Grazina/IsaacPickAndBan/IsaacPickAndBan/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IsaacPickAndBan.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/Flori/Desktop/Projects/IsaacPickAndBan/IsaacPickAndBan/Views/MainPage.xaml]
+[C:/Users/fgrazina.PPI/Source/repos/Florian-Grazina/IsaacPickAndBan/IsaacPickAndBan/Views/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IsaacPickAndBan.Views.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MainPage.xaml

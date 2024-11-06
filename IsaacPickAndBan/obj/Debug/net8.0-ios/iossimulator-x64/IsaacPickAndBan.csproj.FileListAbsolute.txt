@@ -49,3 +49,17 @@ C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.AssemblyInfo.cs
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.csproj.CoreCompileInputs.cache
 C:\Users\Flori\Desktop\Projects\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.sourcelink.json
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\actool\_PartialAppManifest.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\actool\_BundleResourceWithLogicalName.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\actool\_ProcessedImageAssetsPath.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_PartialAppManifest.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_ProcessedCoreMLModelsPath.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedBundleResourcesPath.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedContentPath.items
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.AssemblyInfoInputs.cache
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.AssemblyInfo.cs
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.csproj.CoreCompileInputs.cache
+C:\Users\fgrazina.PPI\Source\Repos\Florian-Grazina\IsaacPickAndBan\IsaacPickAndBan\obj\Debug\net8.0-ios\iossimulator-x64\IsaacPickAndBan.sourcelink.json

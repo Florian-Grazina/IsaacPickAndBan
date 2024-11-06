@@ -11,6 +11,7 @@ public class MauiAppCompatActivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_dispatchTouchEvent:(Landroid/view/MotionEvent;)Z:GetDispatchTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onActivityResult:(IILandroid/content/Intent;)V:GetOnActivityResult_IILandroid_content_Intent_Handler\n" +
 			"n_onBackPressed:()V:GetOnBackPressedHandler\n" +
 			"n_onConfigurationChanged:(Landroid/content/res/Configuration;)V:GetOnConfigurationChanged_Landroid_content_res_Configuration_Handler\n" +
@@ -49,6 +50,14 @@ public class MauiAppCompatActivity
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
+
+
+	public boolean dispatchTouchEvent (android.view.MotionEvent p0)
+	{
+		return n_dispatchTouchEvent (p0);
+	}
+
+	private native boolean n_dispatchTouchEvent (android.view.MotionEvent p0);
 
 
 	public void onActivityResult (int p0, int p1, android.content.Intent p2)

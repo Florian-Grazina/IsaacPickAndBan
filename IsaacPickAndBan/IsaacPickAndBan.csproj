@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -29,11 +28,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
@@ -66,14 +61,202 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.7.23364.3" />
 	</ItemGroup>
 
-	<!-- Build Properties must be defined within these property groups to ensure successful publishing
-       to the Mac App Store. See: https://aka.ms/maui-publish-app-store#define-build-properties-in-your-project-file -->
-  <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
-    <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
-  </PropertyGroup>
+	<ItemGroup>
+	  <AndroidResource Update="Resources\Images\b2_blue_baby.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_book_of_belial.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_cain.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_eden.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_eve.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_isaac.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_judas.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_lazarus.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_lilith.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_maggy.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_samson.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_sleight_of_hand.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_the_d6.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_the_forgotten.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\b2_yum_heart.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\background.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\fsp2_bum_bo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\fsp2_dark_judas.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\fsp2_guppy.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\fsp2_whore_of_babylon.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\g2_apollyon.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\g2_azazel.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\g2_the_keeper.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\g2_the_lost.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_abe.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_ash.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_baba.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_blind_johnny.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_blue_archer.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_boyfriend.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_bum_bo_the_weird.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_captain_viridian.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_crewmate.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_edmund.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_guy_spelunky.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_johnny.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_pink_knight.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_psycho_goreman.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_quote.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_salad_fingers.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_steven.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_the_knight.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_the_silent.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\rwz_yung_venuz.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_bethany.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_flash_isaac.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_jacob_and_esau.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_baleful.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_benighted.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_broken.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_capricious.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_curdled.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_dauntless.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_deceiver.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_deserter.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_empty.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_enigma.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_fettered.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_harlot.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_hoarder.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_miser.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_savage.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_soiled.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\r_the_zealot.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	  <AndroidResource Update="Resources\Images\tw_tapeworm.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </AndroidResource>
+	</ItemGroup>
 
-  <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Release'">
-    <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Release.plist</CodesignEntitlements>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
-  </PropertyGroup>
 </Project>

@@ -4,7 +4,7 @@
     "frameworks": [
       {
         "name": "Microsoft.NETCore.App",
-        "version": "8.0.0-preview.7.23375.6"
+        "version": "8.0.0"
       },
       {
         "name": "Microsoft.Android",
@@ -23,8 +23,11 @@
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
       "System.StartupHookProvider.IsSupported": false,
       "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
+      "System.Text.Json.JsonSerializer.IsReflectionEnabledByDefault": true,
       "Xamarin.Android.Net.UseNegotiateAuthentication": false,
-      "Switch.System.Reflection.ForceInterpretedInvoke": true
+      "Switch.System.Reflection.ForceInterpretedInvoke": true,
+      "Microsoft.Extensions.DependencyInjection.DisableDynamicEngine": true,
+      "System.Diagnostics.Metrics.Meter.IsSupported": false
     }
   }
 }

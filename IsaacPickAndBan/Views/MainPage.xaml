@@ -14,7 +14,7 @@
         <Rectangle Fill="Black"
                    Opacity="0.2"/>
 
-        <ScrollView BackgroundColor="Transparent">
+        <ScrollView>
             <StackLayout>
 
 <!--SEARCH BAR-->
@@ -79,11 +79,11 @@
             <Button Text="Home"
                     HeightRequest="50"
                     WidthRequest="150"/>
-            <Button Grid.Column="1"
+            <!--<Button Grid.Column="1"
                     FontSize="24"
-                    Text="Pick&amp;Ban"
+                    Text="Pick &amp; Ban"
                     HeightRequest="50"
-                    WidthRequest="150"/>
+                    WidthRequest="150"/>-->
         </Grid>
     </Grid>
 
