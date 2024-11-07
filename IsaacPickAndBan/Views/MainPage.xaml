@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:IsaacPickAndBan.ViewModels"
+             xmlns:vm="clr-namespace:IsaacPickAndBan.ViewModels"
+             xmlns:view="clr-namespace:IsaacPickAndBan.Views"
              xmlns:model="clr-namespace:IsaacPickAndBan.Models"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="local:MainViewModel"
+             x:DataType="vm:MainViewModel"
              x:Class="IsaacPickAndBan.MainPage">
 
     <ContentPage.Resources>
@@ -25,12 +26,16 @@
                 <Grid>
                     <Rectangle Fill="black"
                                Opacity="0.5" />
-                    <Entry Placeholder="Search"
-                           PlaceholderColor="White"
-                           TextChanged="Entry_TextChanged"
-                           FontFamily="IsaacFont"
-                           FontSize="25"
-                           TextColor="White" />
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        <Entry FlexLayout.Grow="1"
+                               Placeholder="Search"
+                               PlaceholderColor="White"
+                               TextChanged="Entry_TextChanged"
+                               FontFamily="IsaacFont"
+                               FontSize="25"
+                               TextColor="White" />
+                        <Button BackgroundColor="red" />
+                    </FlexLayout>
                 </Grid>
 
                 <!--LIST OF CARDS-->
@@ -41,15 +46,15 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="model:Card">
 
-                            <Grid WidthRequest="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=CardWidth}"
+                            <Grid WidthRequest="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=CardWidth}"
                                   Padding="7">
 
                                 <Image x:Name="MainImage"
                                        Source="{Binding MainImage}" />
                                 <Button BackgroundColor="Transparent"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=FocusingOnCardCommand}"
-                                        CommandParameter="{Binding .}" 
-                                        Margin="5"/>
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Margin="5" />
 
                             </Grid>
 
@@ -77,21 +82,8 @@
             </Grid>
         </Grid>
         <!--MENU-->
-        <Grid ColumnDefinitions="*,*"
-              HeightRequest="60"
-              VerticalOptions="End">
-            <Rectangle Grid.ColumnSpan="2"
-                       Scale="1.05"
-                       Fill="black"
-                       Opacity="0.9" />
-            <Button Text="Home"
-                    HeightRequest="50"
-                    WidthRequest="150" />
-            <!--<Button Grid.Column="1"
-                    FontSize="24"
-                    Text="Pick &amp; Ban"
-                    HeightRequest="50"
-                    WidthRequest="150"/>-->
+        <Grid>
+            <view:MenuBarContentView />
         </Grid>
     </Grid>
 

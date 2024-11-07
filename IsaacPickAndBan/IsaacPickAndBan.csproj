@@ -262,6 +262,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\MenuBarContentView.xaml.cs">
+	    <DependentUpon>MenuBarContentView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\MenuBarContentView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Update="Resources\AppIcon\appicon.svg">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>

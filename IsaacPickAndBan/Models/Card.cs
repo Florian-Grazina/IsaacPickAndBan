@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Extension { get; set; }
+        public Extension Extension { get; set; }
         public string Ethernal { get; set; }
         public string MainImage { get; set; }
         public string EthernalImage { get; set; }

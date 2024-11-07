@@ -1,5 +1,6 @@
 ﻿using IsaacPickAndBan.Models;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace IsaacPickAndBan.Database
 {
@@ -13,7 +14,13 @@ namespace IsaacPickAndBan.Database
             using StreamReader reader = new(stream);
             string jsonText = reader.ReadToEnd();
 
-            ListOfCards = JsonSerializer.Deserialize<List<Card>>(jsonText);
+
+            JsonSerializerOptions options = new()
+            {
+                Converters = { new JsonStringEnumConverter() }
+            };
+
+            ListOfCards = JsonSerializer.Deserialize<List<Card>>(jsonText, options);
 
             foreach (var card in ListOfCards)
             {
