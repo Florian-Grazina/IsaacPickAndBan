@@ -5,5 +5,9 @@
 /.vs
 .vs
 bin
+.bin/
+/bin
 obj
+/obj
+.obj/
 packages

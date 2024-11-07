@@ -7,31 +7,38 @@ namespace IsaacPickAndBan.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        // properties
-        [ObservableProperty]
-        public List<Card> listOfCards;
-
-        [ObservableProperty]
-        public bool isFocused = false;
-
-        [ObservableProperty]
-        public bool isFlipped = false;
-        
-        [ObservableProperty]
-        public bool isNotFlipped = true;
-
-        [ObservableProperty]
-        public Card focusedCard;
-
-
-        // constructor
+        #region constructor
         public MainViewModel()
         {
             ListOfCards = Data.ListOfCards;
+            CardWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density / 3;
         }
+        #endregion
 
+        #region observable properties
+        [ObservableProperty]
+        private List<Card> listOfCards;
 
-        // methods
+        [ObservableProperty]
+        private bool isFocused = false;
+
+        [ObservableProperty]
+        private bool isFlipped = false;
+
+        [ObservableProperty]
+        private bool isNotFlipped = true;
+
+        [ObservableProperty]
+        private Card focusedCard;
+
+        [ObservableProperty]
+        private double cardWidth;
+        #endregion
+
+        #region properties
+        #endregion
+
+        #region commands
         [RelayCommand]
         public void FocusingOnCard(Card focusedCard)
         {
@@ -54,5 +61,6 @@ namespace IsaacPickAndBan.ViewModels
             IsNotFlipped = true;
             FocusedCard = null;
         }
+        #endregion
     }
 }

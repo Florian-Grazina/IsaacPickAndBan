@@ -25,6 +25,9 @@
         <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.FocusedCard">
             <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.focusedCard"/>
         </member>
+        <member name="P:IsaacPickAndBan.ViewModels.MainViewModel.CardWidth">
+            <inheritdoc cref="F:IsaacPickAndBan.ViewModels.MainViewModel.cardWidth"/>
+        </member>
         <member name="F:IsaacPickAndBan.ViewModels.MainViewModel.focusingOnCardCommand">
             <summary>The backing field for <see cref="P:IsaacPickAndBan.ViewModels.MainViewModel.FocusingOnCardCommand"/>.</summary>
         </member>
@@ -64,6 +67,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FocusedCard">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FocusedCard" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CardWidth">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CardWidth" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -84,6 +90,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FocusedCard">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FocusedCard" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CardWidth">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CardWidth" generated properties.</summary>
         </member>
     </members>
 </doc>

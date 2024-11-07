@@ -11654,11 +11654,10 @@ public final class R {
     public static final int rwz_the_knight=0x7f07011f;
     public static final int rwz_the_silent=0x7f070120;
     public static final int rwz_yung_venuz=0x7f070121;
-    public static final int splash=0x7f070122;
-    public static final int test_level_drawable=0x7f070123;
-    public static final int tooltip_frame_dark=0x7f070124;
-    public static final int tooltip_frame_light=0x7f070125;
-    public static final int tw_tapeworm=0x7f070126;
+    public static final int test_level_drawable=0x7f070122;
+    public static final int tooltip_frame_dark=0x7f070123;
+    public static final int tooltip_frame_light=0x7f070124;
+    public static final int tw_tapeworm=0x7f070125;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
