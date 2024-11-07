@@ -3,7 +3,7 @@
 ## Logs
 
 - List all cards, from all expansions
-- Click to zomm
+- Click to zoom
 - Click again to show ethernal weapon
 - Clik out to exit
 - Search bar with dynamic filter
