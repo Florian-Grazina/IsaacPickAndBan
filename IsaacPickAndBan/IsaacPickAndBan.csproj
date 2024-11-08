@@ -52,6 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
 	  <None Remove="Resources\Fonts\Font_soulsV2_Body-Regular.ttf" />
 	  <None Remove="Resources\Images\splash.png" />
 	</ItemGroup>
@@ -278,6 +279,73 @@
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Cards\b2_blue_baby.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_book_of_belial.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_cain.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_eden.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_eve.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_isaac.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_judas.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_lazarus.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_lilith.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_maggy.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_samson.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_sleight_of_hand.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_the_d6.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_the_forgotten.png" />
+	  <MauiImage Include="Resources\Images\Cards\b2_yum_heart.png" />
+	  <MauiImage Include="Resources\Images\Cards\fsp2_bum_bo.png" />
+	  <MauiImage Include="Resources\Images\Cards\fsp2_dark_judas.png" />
+	  <MauiImage Include="Resources\Images\Cards\fsp2_guppy.png" />
+	  <MauiImage Include="Resources\Images\Cards\fsp2_whore_of_babylon.png" />
+	  <MauiImage Include="Resources\Images\Cards\g2_apollyon.png" />
+	  <MauiImage Include="Resources\Images\Cards\g2_azazel.png" />
+	  <MauiImage Include="Resources\Images\Cards\g2_the_keeper.png" />
+	  <MauiImage Include="Resources\Images\Cards\g2_the_lost.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_abe.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_ash.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_baba.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_blind_johnny.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_blue_archer.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_boyfriend.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_bum_bo_the_weird.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_captain_viridian.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_crewmate.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_edmund.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_guy_spelunky.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_johnny.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_pink_knight.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_psycho_goreman.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_quote.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_salad_fingers.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_steven.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_the_knight.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_the_silent.png" />
+	  <MauiImage Include="Resources\Images\Cards\rwz_yung_venuz.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_bethany.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_flash_isaac.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_jacob_and_esau.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_baleful.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_benighted.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_broken.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_capricious.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_curdled.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_dauntless.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_deceiver.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_deserter.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_empty.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_enigma.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_fettered.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_harlot.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_hoarder.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_miser.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_savage.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_soiled.png" />
+	  <MauiImage Include="Resources\Images\Cards\r_the_zealot.png" />
+	  <MauiImage Include="Resources\Images\Cards\tw_tapeworm.png" />
 	</ItemGroup>
 
 </Project>

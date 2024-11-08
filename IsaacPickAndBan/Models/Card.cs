@@ -12,8 +12,8 @@
 
         public void GenerateImage()
         {
-            MainImage = $"{Extension}_{Name}.png";
-            EthernalImage = $"{Extension}_{Ethernal}.png";
+            MainImage = $"Cards/{Extension}_{Name}.png";
+            EthernalImage = $"Cards/{Extension}_{Ethernal}.png";
         }
     }
 }

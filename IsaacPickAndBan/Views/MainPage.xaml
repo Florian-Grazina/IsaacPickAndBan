@@ -5,6 +5,7 @@
              xmlns:view="clr-namespace:IsaacPickAndBan.Views"
              xmlns:model="clr-namespace:IsaacPickAndBan.Models"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:fonts="clr-namespace:IsaacPickAndBan.FontAwesome"
              x:DataType="vm:MainViewModel"
              x:Class="IsaacPickAndBan.MainPage">
 
@@ -23,7 +24,7 @@
             <StackLayout>
 
                 <!--SEARCH BAR-->
-                <Grid>
+                <Grid HeightRequest="45">
                     <Rectangle Fill="black"
                                Opacity="0.5" />
                     <FlexLayout JustifyContent="SpaceBetween">
@@ -34,7 +35,12 @@
                                FontFamily="IsaacFont"
                                FontSize="25"
                                TextColor="White" />
-                        <Button BackgroundColor="red" />
+                        <fonts:FontAwesomeLabel WidthRequest="50"
+                                                Margin="2"
+                                                Padding="0"
+                                                FontSize="23"
+                                                Text="{x:Static fonts:FontAwesomeIcon.SlidersH}"
+                                                Background="#50FFFFFF"/>
                     </FlexLayout>
                 </Grid>
 
