@@ -5,19 +5,20 @@ namespace IsaacPickAndBan
 {
     public partial class MainPage : ContentPage
     {
-        // properties
+        #region properties
         private readonly MainViewModel _viewModel;
+        #endregion
 
-
-        // constructor
+        #region constructor
         public MainPage(MainViewModel viewModel)
         {
             InitializeComponent();
             _viewModel = viewModel;
             BindingContext = _viewModel;
         }
+        #endregion
 
-        // methods
+        #region methods
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
             _viewModel.ListOfCards = Data.ListOfCards.Where(card => card.Name.Contains(e.NewTextValue)).ToList();
@@ -29,5 +30,6 @@ namespace IsaacPickAndBan
             _viewModel.FlipCard();
             await cardFrame.ScaleTo(1.0, 200, Easing.BounceOut);
         }
+        #endregion
     }
 }

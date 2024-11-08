@@ -18,17 +18,18 @@
         <Image Source="background.jpg"
                Aspect="AspectFill" />
         <Rectangle Fill="Black"
-                   Opacity="0.2" />
+                   Opacity="0.3" />
 
         <ScrollView>
-            <StackLayout>
+            <StackLayout Margin="0,0,0,60">
 
                 <!--SEARCH BAR-->
                 <Grid HeightRequest="45">
                     <Rectangle Fill="black"
                                Opacity="0.5" />
                     <FlexLayout JustifyContent="SpaceBetween">
-                        <Entry FlexLayout.Grow="1"
+                        <Entry x:Name="searchBarEntry"
+                               FlexLayout.Grow="1"
                                Placeholder="Search"
                                PlaceholderColor="White"
                                TextChanged="Entry_TextChanged"
@@ -40,7 +41,7 @@
                                                 Padding="0"
                                                 FontSize="23"
                                                 Text="{x:Static fonts:FontAwesomeIcon.SlidersH}"
-                                                Background="#50FFFFFF"/>
+                                                Background="#50FFFFFF" />
                     </FlexLayout>
                 </Grid>
 
