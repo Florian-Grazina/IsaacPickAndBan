@@ -14,10 +14,6 @@
     </ContentPage.Resources>
 
     <Grid>
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnBackgroundTapped" />
-        </Grid.GestureRecognizers>
-
         <!--BACKGROUND-->
         <Image Source="background.jpg"
                Aspect="AspectFill" />
@@ -29,6 +25,7 @@
 
                 <!--SEARCH BAR-->
                 <Grid HeightRequest="45">
+
                     <Rectangle Fill="black"
                                Opacity="0.5" />
                     <FlexLayout JustifyContent="SpaceBetween">
@@ -45,7 +42,8 @@
                                                 Padding="0"
                                                 FontSize="23"
                                                 Text="{x:Static fonts:FontAwesomeIcon.SlidersH}"
-                                                Background="#50FFFFFF" />
+                                                Background="#50FFFFFF"
+                                                Command="{Binding OpenFilterMenuCommand}"/>
                     </FlexLayout>
                 </Grid>
 
@@ -66,7 +64,6 @@
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
                                         CommandParameter="{Binding .}"
                                         Margin="5" />
-
                             </Grid>
 
                         </DataTemplate>
@@ -85,16 +82,32 @@
             <Grid HeightRequest="460"
                   Margin="30">
                 <Image Source="{Binding FocusedCard.MainImage}"
-                       IsVisible="{Binding IsNotFlipped}" />
+                       IsVisible="{Binding IsFlipped, Converter={StaticResource InverseBoolConverter}}" />
                 <Image Source="{Binding FocusedCard.EthernalImage}"
                        IsVisible="{Binding IsFlipped}" />
                 <Button BackgroundColor="Transparent"
                         Clicked="FlipCard" />
             </Grid>
         </Grid>
+        
         <!--MENU-->
         <Grid>
             <view:MenuBarContentView />
+        </Grid>
+
+        <!--FILTER-->
+        <Grid IsVisible="{Binding FilterMenuIsOpen}">
+            <Button BackgroundColor="Black"
+                    Opacity="0.50"
+                    CornerRadius="1"
+                    Command="{Binding CloseFilterMenuCommand}" />
+
+            <VerticalStackLayout>
+                <Label Text="Filter"
+                       FontSize="30"
+                       TextColor="White"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
         </Grid>
     </Grid>
 

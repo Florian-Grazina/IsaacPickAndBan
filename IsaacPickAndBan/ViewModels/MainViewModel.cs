@@ -20,13 +20,13 @@ namespace IsaacPickAndBan.ViewModels
         private List<Card> listOfCards;
 
         [ObservableProperty]
+        private bool filterMenuIsOpen = false;
+
+        [ObservableProperty]
         private bool isFocused = false;
 
         [ObservableProperty]
         private bool isFlipped = false;
-
-        [ObservableProperty]
-        private bool isNotFlipped = true;
 
         [ObservableProperty]
         private Card focusedCard;
@@ -38,28 +38,39 @@ namespace IsaacPickAndBan.ViewModels
         #region properties
         #endregion
 
+        #region public methods
+        public void FlipCard()
+        {
+            IsFlipped = !IsFlipped;
+        }
+        #endregion
+
         #region commands
         [RelayCommand]
-        public void FocusingOnCard(Card focusedCard)
+        private void FocusingOnCard(Card focusedCard)
         {
             IsFocused = true;
             FocusedCard = focusedCard;
         }
 
         [RelayCommand]
-        public void FlipCard()
-        {
-            IsFlipped = !IsFlipped;
-            IsNotFlipped = !IsNotFlipped;
-        }
-
-        [RelayCommand]
-        public void ClearFocus()
+        private void ClearFocus()
         {
             IsFocused = false;
             IsFlipped = false;
-            IsNotFlipped = true;
             FocusedCard = null;
+        }
+
+        [RelayCommand]
+        private void OpenFilterMenu()
+        {
+            FilterMenuIsOpen = true;
+        }
+
+        [RelayCommand]
+        private void CloseFilterMenu()
+        {
+            FilterMenuIsOpen = false;
         }
         #endregion
     }
