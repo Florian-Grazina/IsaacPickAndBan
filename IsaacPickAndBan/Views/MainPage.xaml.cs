@@ -30,6 +30,11 @@ namespace IsaacPickAndBan
             _viewModel.FlipCard();
             await cardFrame.ScaleTo(1.0, 200, Easing.BounceOut);
         }
+
+        private void OnBackgroundTapped(object sender, TappedEventArgs e)
+        {
+            Focus();
+        }
         #endregion
     }
 }
