@@ -11,7 +11,7 @@ namespace IsaacPickAndBan.ViewModels
         #region constructor
         public MainViewModel()
         {
-            ListOfCards = [];
+            listOfCards = [];
             PopulateListOfCards(Data.ListOfCards);
             CardWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density / 3;
             Filters = GetFilters();
@@ -19,8 +19,8 @@ namespace IsaacPickAndBan.ViewModels
         #endregion
 
         #region observable properties
-        //[ObservableProperty]
-        public ObservableCollection<Card> ListOfCards { get; }
+        [ObservableProperty]
+        public List<Card> listOfCards;
 
         [ObservableProperty]
         private bool filterMenuIsOpen = false;
@@ -112,19 +112,18 @@ namespace IsaacPickAndBan.ViewModels
 
         private void PopulateListOfCards(List<Card> source)
         {
-            ListOfCards.Clear();
-            source.ForEach(ListOfCards.Add);
+            ListOfCards = source;
         }
 
         private void ApplyFilters()
-        {
+       {
             List<Extension> activeExtensions = Filters.Where(f => f.IsActif).Select(f => f.Extension).ToList();
             List<Card> filteredCards = Data.ListOfCards.Where(c => activeExtensions.Contains(c.Extension)).ToList();
 
             if(!string.IsNullOrEmpty(searchEntry))
-                filteredCards = filteredCards.Where(c => searchEntry.Contains(c.Name)).ToList();
+                ListOfCards = new(filteredCards.Where(c => searchEntry.Contains(c.Name)));
 
-            PopulateListOfCards(filteredCards);
+            //PopulateListOfCards(filteredCards);
         }
         #endregion
     }

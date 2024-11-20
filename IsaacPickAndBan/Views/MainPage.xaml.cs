@@ -1,4 +1,5 @@
-﻿using IsaacPickAndBan.ViewModels;
+﻿using IsaacPickAndBan.Database;
+using IsaacPickAndBan.ViewModels;
 
 namespace IsaacPickAndBan
 {
@@ -20,7 +21,7 @@ namespace IsaacPickAndBan
         #region methods
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _viewModel.SearchEntry = e.NewTextValue;
+            _viewModel.ListOfCards = Data.ListOfCards.Where(card => card.Name.Contains(e.NewTextValue)).ToList();
         }
 
         private async void FlipCard(object sender, EventArgs e)
