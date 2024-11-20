@@ -29,8 +29,7 @@
                     <Rectangle Fill="black"
                                Opacity="0.5" />
                     <FlexLayout JustifyContent="SpaceBetween">
-                        <Entry x:Name="searchBarEntry"
-                               FlexLayout.Grow="1"
+                        <Entry FlexLayout.Grow="1"
                                Placeholder="Search"
                                PlaceholderColor="White"
                                TextChanged="Entry_TextChanged"
@@ -43,7 +42,7 @@
                                                 FontSize="23"
                                                 Text="{x:Static fonts:FontAwesomeIcon.SlidersH}"
                                                 Background="#50FFFFFF"
-                                                Command="{Binding OpenFilterMenuCommand}"/>
+                                                Command="{Binding OpenFilterMenuCommand}" />
                     </FlexLayout>
                 </Grid>
 
@@ -89,25 +88,45 @@
                         Clicked="FlipCard" />
             </Grid>
         </Grid>
-        
+
         <!--MENU-->
         <Grid>
             <view:MenuBarContentView />
         </Grid>
 
         <!--FILTER-->
-        <Grid IsVisible="{Binding FilterMenuIsOpen}">
-            <Button BackgroundColor="Black"
+        <Grid IsVisible="{Binding FilterMenuIsOpen}"
+              RowDefinitions="auto,*">
+            <Button Grid.RowSpan="2"
+                    BackgroundColor="Black"
                     Opacity="0.50"
                     CornerRadius="1"
                     Command="{Binding CloseFilterMenuCommand}" />
 
-            <VerticalStackLayout>
-                <Label Text="Filter"
-                       FontSize="30"
-                       TextColor="White"
-                       HorizontalOptions="Center" />
-            </VerticalStackLayout>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Filters}"
+                        JustifyContent="Center"
+                        Background="red"
+                        Wrap="Wrap"
+                        Direction="Row">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:FilterViewModel">
+
+                        <Grid ColumnDefinitions="*,40"
+                              WidthRequest="150"
+                              Padding="10">
+                            <Label VerticalOptions="Center"
+                                   Text="{Binding Name}" />
+                            <CheckBox Grid.Column="1"
+                                      IsChecked="{Binding IsActif}" />
+                            <Button Grid.ColumnSpan="2"
+                                    Background="Transparent"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=ToggleFilterCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
+
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
         </Grid>
     </Grid>
 
