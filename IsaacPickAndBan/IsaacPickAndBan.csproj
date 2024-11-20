@@ -348,4 +348,6 @@
 	  <MauiImage Include="Resources\Images\Cards\tw_tapeworm.png" />
 	</ItemGroup>
 
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadUnhandledDeviceExceptionIsaacPickAndBanHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

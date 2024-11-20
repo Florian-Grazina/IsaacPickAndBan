@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using IsaacPickAndBan.Database;
 using IsaacPickAndBan.Models;
+using System.Collections.ObjectModel;
 
 namespace IsaacPickAndBan.ViewModels
 {
@@ -10,17 +11,22 @@ namespace IsaacPickAndBan.ViewModels
         #region constructor
         public MainViewModel()
         {
-            ListOfCards = Data.ListOfCards;
+            ListOfCards = [];
+            PopulateListOfCards(Data.ListOfCards);
             CardWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density / 3;
+            Filters = GetFilters();
         }
         #endregion
 
         #region observable properties
-        [ObservableProperty]
-        private List<Card> listOfCards;
+        //[ObservableProperty]
+        public ObservableCollection<Card> ListOfCards { get; }
 
         [ObservableProperty]
         private bool filterMenuIsOpen = false;
+
+        [ObservableProperty]
+        private List<FilterViewModel> filters;
 
         [ObservableProperty]
         private bool isFocused = false;
@@ -33,6 +39,18 @@ namespace IsaacPickAndBan.ViewModels
 
         [ObservableProperty]
         private double cardWidth;
+
+        private string searchEntry = string.Empty;
+
+        public string SearchEntry
+        {
+            get => searchEntry;
+            set
+            {
+                searchEntry = value;
+                ApplyFilters();
+            }
+        }
         #endregion
 
         #region properties
@@ -71,6 +89,42 @@ namespace IsaacPickAndBan.ViewModels
         private void CloseFilterMenu()
         {
             FilterMenuIsOpen = false;
+        }
+
+        [RelayCommand]
+        private void ToggleFilter(FilterViewModel filter)
+        {
+            filter.IsActif = !filter.IsActif;
+            ApplyFilters();
+        }
+        #endregion
+
+        #region private methods
+        private List<FilterViewModel> GetFilters()
+        {
+            List<FilterViewModel> filters = [];
+            foreach(Extension extension in Enum.GetValues(typeof(Extension)))
+            {
+                filters.Add(new FilterViewModel(extension, true));
+            }
+            return filters;
+        }
+
+        private void PopulateListOfCards(List<Card> source)
+        {
+            ListOfCards.Clear();
+            source.ForEach(ListOfCards.Add);
+        }
+
+        private void ApplyFilters()
+        {
+            List<Extension> activeExtensions = Filters.Where(f => f.IsActif).Select(f => f.Extension).ToList();
+            List<Card> filteredCards = Data.ListOfCards.Where(c => activeExtensions.Contains(c.Extension)).ToList();
+
+            if(!string.IsNullOrEmpty(searchEntry))
+                filteredCards = filteredCards.Where(c => searchEntry.Contains(c.Name)).ToList();
+
+            PopulateListOfCards(filteredCards);
         }
         #endregion
     }
