@@ -20,7 +20,7 @@ namespace IsaacPickAndBan.ViewModels
 
         #region observable properties
         [ObservableProperty]
-        public List<Card> listOfCards;
+        public ObservableCollection<Card> listOfCards;
 
         [ObservableProperty]
         private bool filterMenuIsOpen = false;
@@ -103,7 +103,7 @@ namespace IsaacPickAndBan.ViewModels
         private List<FilterViewModel> GetFilters()
         {
             List<FilterViewModel> filters = [];
-            foreach(Extension extension in Enum.GetValues(typeof(Extension)))
+            foreach (Extension extension in Enum.GetValues(typeof(Extension)))
             {
                 filters.Add(new FilterViewModel(extension, true));
             }
@@ -112,18 +112,11 @@ namespace IsaacPickAndBan.ViewModels
 
         private void PopulateListOfCards(List<Card> source)
         {
-            ListOfCards = source;
+            ListOfCards = new(source);
         }
 
         private void ApplyFilters()
-       {
-            List<Extension> activeExtensions = Filters.Where(f => f.IsActif).Select(f => f.Extension).ToList();
-            List<Card> filteredCards = Data.ListOfCards.Where(c => activeExtensions.Contains(c.Extension)).ToList();
-
-            if(!string.IsNullOrEmpty(searchEntry))
-                ListOfCards = new(filteredCards.Where(c => searchEntry.Contains(c.Name)));
-
-            //PopulateListOfCards(filteredCards);
+        {
         }
         #endregion
     }
