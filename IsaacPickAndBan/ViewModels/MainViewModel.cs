@@ -48,7 +48,6 @@ namespace IsaacPickAndBan.ViewModels
             set
             {
                 searchEntry = value;
-                ApplyFilters();
             }
         }
         #endregion
@@ -95,7 +94,7 @@ namespace IsaacPickAndBan.ViewModels
         private void ToggleFilter(FilterViewModel filter)
         {
             filter.IsActif = !filter.IsActif;
-            ApplyFilters();
+            ApplyFilters(filter, filter.IsActif);
         }
         #endregion
 
@@ -115,8 +114,23 @@ namespace IsaacPickAndBan.ViewModels
             ListOfCards = new(source);
         }
 
-        private void ApplyFilters()
+        private void ApplyFilters(FilterViewModel filter, bool isActif)
         {
+            // isActif = add 
+            // !isActif = remove
+
+            if(isActif)
+            {
+                foreach (Card item in Data.ListOfCards.Where(card => card.Extension == filter.Extension))
+                    ListOfCards.Add(item);
+            }
+            else
+            {
+                for (int i = ListOfCards.Count - 1; i >= 0; i--)
+                    if (ListOfCards[i].Extension == filter.Extension)
+                        ListOfCards.RemoveAt(i);
+
+            }
         }
         #endregion
     }
