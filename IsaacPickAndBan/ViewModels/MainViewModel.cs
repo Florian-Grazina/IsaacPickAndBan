@@ -13,7 +13,6 @@ namespace IsaacPickAndBan.ViewModels
         {
             listOfCards = [];
             PopulateListOfCards(Data.ListOfCards);
-            CardWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density / 3;
             Filters = GetFilters();
         }
         #endregion
@@ -36,9 +35,6 @@ namespace IsaacPickAndBan.ViewModels
 
         [ObservableProperty]
         private Card focusedCard;
-
-        [ObservableProperty]
-        private double cardWidth;
 
         private string searchEntry = string.Empty;
 

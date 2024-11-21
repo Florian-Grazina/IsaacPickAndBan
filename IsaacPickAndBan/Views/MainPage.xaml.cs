@@ -1,5 +1,4 @@
-﻿using IsaacPickAndBan.Database;
-using IsaacPickAndBan.ViewModels;
+﻿using IsaacPickAndBan.ViewModels;
 
 namespace IsaacPickAndBan
 {

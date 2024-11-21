@@ -47,15 +47,17 @@
                 </Grid>
 
                 <!--LIST OF CARDS-->
-                <FlexLayout BindableLayout.ItemsSource="{Binding ListOfCards}"
-                            JustifyContent="SpaceBetween"
-                            Wrap="Wrap"
-                            Direction="Row">
-                    <BindableLayout.ItemTemplate>
+                <CollectionView ItemsSource="{Binding ListOfCards}">
+                    
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="3" />
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Card">
 
-                            <Grid WidthRequest="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=CardWidth}"
-                                  Padding="7">
+                            <Grid Padding="7">
 
                                 <Image x:Name="MainImage"
                                        Source="{Binding MainImage}" />
@@ -66,8 +68,8 @@
                             </Grid>
 
                         </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </FlexLayout>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
 
@@ -121,7 +123,7 @@
                             <Button Grid.ColumnSpan="2"
                                     Background="Transparent"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=ToggleFilterCommand}"
-                                    CommandParameter="{Binding .}"/>
+                                    CommandParameter="{Binding .}" />
                         </Grid>
 
                     </DataTemplate>
