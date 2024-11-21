@@ -47,7 +47,7 @@
                 </Grid>
 
                 <!--LIST OF CARDS-->
-                <CollectionView ItemsSource="{Binding ListOfCards}">
+                <CollectionView ItemsSource="{Binding ListOfCards}" RemainingItemsThreshold="20">
                     
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"
