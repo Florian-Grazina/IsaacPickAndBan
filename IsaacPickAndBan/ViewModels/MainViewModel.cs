@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Android.Widget;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using IsaacPickAndBan.Database;
 using IsaacPickAndBan.Models;
@@ -91,7 +92,7 @@ namespace IsaacPickAndBan.ViewModels
         {
             filter.IsActif = !filter.IsActif;
 
-            if(filter.IsActif)
+            if (filter.IsActif)
                 await AddItemsOneByOneAsync(Data.ListOfCards.Where(card => card.Extension == filter.Extension));
             else
                 await RemoveItemsOneByOneAsync(ListOfCards.Where(card => card.Extension == filter.Extension));
@@ -126,11 +127,14 @@ namespace IsaacPickAndBan.ViewModels
 
         private async Task RemoveItemsOneByOneAsync(IEnumerable<Card> itemsToRemove, int delayMilliseconds = 100)
         {
-            foreach (var item in itemsToRemove)
-            {
-                ListOfCards.Remove(item);
-                await Task.Delay(delayMilliseconds);
-            }
+            Extension ext = itemsToRemove.FirstOrDefault().Extension;
+
+            for (int i = ListOfCards.Count - 1; i >= 0; i--)
+                if (ListOfCards[i].Extension == ext)
+                {
+                    ListOfCards.RemoveAt(i);
+                    await Task.Delay(delayMilliseconds);
+                }
         }
         #endregion
     }
