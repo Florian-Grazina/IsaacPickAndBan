@@ -87,10 +87,15 @@ namespace IsaacPickAndBan.ViewModels
         }
 
         [RelayCommand]
-        private void ToggleFilter(FilterViewModel filter)
+        private async Task ToggleFilter(FilterViewModel filter)
         {
             filter.IsActif = !filter.IsActif;
-            ApplyFilters(filter, filter.IsActif);
+
+            if(filter.IsActif)
+                await AddItemsOneByOneAsync(Data.ListOfCards.Where(card => card.Extension == filter.Extension));
+            else
+                await RemoveItemsOneByOneAsync(ListOfCards.Where(card => card.Extension == filter.Extension));
+
         }
         #endregion
 
@@ -110,22 +115,21 @@ namespace IsaacPickAndBan.ViewModels
             ListOfCards = new(source);
         }
 
-        private void ApplyFilters(FilterViewModel filter, bool isActif)
+        private async Task AddItemsOneByOneAsync(IEnumerable<Card> newItems, int delayMilliseconds = 100)
         {
-            // isActif = add 
-            // !isActif = remove
-
-            if(isActif)
+            foreach (var item in newItems)
             {
-                foreach (Card item in Data.ListOfCards.Where(card => card.Extension == filter.Extension))
-                    ListOfCards.Add(item);
+                ListOfCards.Add(item);
+                await Task.Delay(delayMilliseconds);
             }
-            else
-            {
-                for (int i = ListOfCards.Count - 1; i >= 0; i--)
-                    if (ListOfCards[i].Extension == filter.Extension)
-                        ListOfCards.RemoveAt(i);
+        }
 
+        private async Task RemoveItemsOneByOneAsync(IEnumerable<Card> itemsToRemove, int delayMilliseconds = 100)
+        {
+            foreach (var item in itemsToRemove)
+            {
+                ListOfCards.Remove(item);
+                await Task.Delay(delayMilliseconds);
             }
         }
         #endregion
