@@ -36,13 +36,6 @@
                                FontFamily="IsaacFont"
                                FontSize="25"
                                TextColor="White" />
-                        <fonts:FontAwesomeLabel WidthRequest="50"
-                                                Margin="2"
-                                                Padding="0"
-                                                FontSize="23"
-                                                Text="{x:Static fonts:FontAwesomeIcon.SlidersH}"
-                                                Background="#50FFFFFF"
-                                                Command="{Binding OpenFilterMenuCommand}" />
                     </FlexLayout>
                 </Grid>
 
@@ -94,41 +87,6 @@
         <!--MENU-->
         <Grid>
             <view:MenuBarContentView />
-        </Grid>
-
-        <!--FILTER-->
-        <Grid IsVisible="{Binding FilterMenuIsOpen}"
-              RowDefinitions="auto,*">
-            <Button Grid.RowSpan="2"
-                    BackgroundColor="Black"
-                    Opacity="0.50"
-                    CornerRadius="1"
-                    Command="{Binding CloseFilterMenuCommand}" />
-
-            <FlexLayout BindableLayout.ItemsSource="{Binding Filters}"
-                        JustifyContent="Center"
-                        Background="red"
-                        Wrap="Wrap"
-                        Direction="Row">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="vm:FilterViewModel">
-
-                        <Grid ColumnDefinitions="*,40"
-                              WidthRequest="150"
-                              Padding="10">
-                            <Label VerticalOptions="Center"
-                                   Text="{Binding Name}" />
-                            <CheckBox Grid.Column="1"
-                                      IsChecked="{Binding IsActif}" />
-                            <Button Grid.ColumnSpan="2"
-                                    Background="Transparent"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=ToggleFilterCommand}"
-                                    CommandParameter="{Binding .}" />
-                        </Grid>
-
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
         </Grid>
     </Grid>
 

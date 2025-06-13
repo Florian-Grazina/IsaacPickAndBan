@@ -74,67 +74,12 @@ namespace IsaacPickAndBan.ViewModels
             IsFlipped = false;
             FocusedCard = null;
         }
-
-        [RelayCommand]
-        private void OpenFilterMenu()
-        {
-            FilterMenuIsOpen = true;
-        }
-
-        [RelayCommand]
-        private void CloseFilterMenu()
-        {
-            FilterMenuIsOpen = false;
-        }
-
-        [RelayCommand]
-        private async Task ToggleFilter(FilterViewModel filter)
-        {
-            filter.IsActif = !filter.IsActif;
-
-            if (filter.IsActif)
-                await AddItemsOneByOneAsync(Data.ListOfCards.Where(card => card.Extension == filter.Extension));
-            else
-                await RemoveItemsOneByOneAsync(ListOfCards.Where(card => card.Extension == filter.Extension));
-
-        }
         #endregion
 
         #region private methods
-        private List<FilterViewModel> GetFilters()
-        {
-            List<FilterViewModel> filters = [];
-            foreach (Extension extension in Enum.GetValues(typeof(Extension)))
-            {
-                filters.Add(new FilterViewModel(extension, true));
-            }
-            return filters;
-        }
-
         private void PopulateListOfCards(List<Card> source)
         {
             ListOfCards = new(source);
-        }
-
-        private async Task AddItemsOneByOneAsync(IEnumerable<Card> newItems, int delayMilliseconds = 100)
-        {
-            foreach (var item in newItems)
-            {
-                ListOfCards.Add(item);
-                await Task.Delay(delayMilliseconds);
-            }
-        }
-
-        private async Task RemoveItemsOneByOneAsync(IEnumerable<Card> itemsToRemove, int delayMilliseconds = 100)
-        {
-            Extension ext = itemsToRemove.FirstOrDefault().Extension;
-
-            for (int i = ListOfCards.Count - 1; i >= 0; i--)
-                if (ListOfCards[i].Extension == ext)
-                {
-                    ListOfCards.RemoveAt(i);
-                    await Task.Delay(delayMilliseconds);
-                }
         }
         #endregion
     }
