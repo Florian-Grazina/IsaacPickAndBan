@@ -1,13 +1,26 @@
-﻿using IsaacPickAndBan.Database;
+﻿
+using IsaacPickAndBan.Database;
+using IsaacPickAndBan.Views;
 
 namespace IsaacPickAndBan
 {
     public partial class App : Application
     {
-        public App()
+        private readonly Data _data;
+
+        public App(Data data)
         {
             InitializeComponent();
-            Data.InitDatabase();
+            _data = data;
+
+            MainPage = new LoadingPage();
+
+            InitializeApp();
+        }
+
+        private async void InitializeApp()
+        {
+            await _data.InitializeAsync();
             MainPage = new AppShell();
         }
     }

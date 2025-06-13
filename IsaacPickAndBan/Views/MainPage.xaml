@@ -55,10 +55,10 @@
 
                                 <Image x:Name="MainImage"
                                        Source="{Binding MainImage}" />
-                                <Button BackgroundColor="Transparent"
+                                <!--<Button BackgroundColor="Transparent"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
                                         CommandParameter="{Binding .}"
-                                        Margin="5" />
+                                        Margin="5" />-->
                             </Grid>
 
                         </DataTemplate>

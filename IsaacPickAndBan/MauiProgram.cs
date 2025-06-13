@@ -1,5 +1,5 @@
-﻿using IsaacPickAndBan.ViewModels;
-using Microsoft.Extensions.Logging;
+﻿using IsaacPickAndBan.Database;
+using IsaacPickAndBan.ViewModels;
 
 namespace IsaacPickAndBan
 {
@@ -19,11 +19,12 @@ namespace IsaacPickAndBan
                 });
 
             // pages
+            builder.Services.AddSingleton<Data>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<MainViewModel>();
 
 #if DEBUG
-            builder.Logging.AddDebug();
+            //builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

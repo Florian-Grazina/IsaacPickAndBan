@@ -9,23 +9,22 @@ namespace IsaacPickAndBan.ViewModels
     public partial class MainViewModel : ObservableObject
     {
         #region fields
-        private readonly List<Card> _listOfCards = Data.ListOfCards;
+        private readonly IEnumerable<Card> _listOfCards;
         private const int DELAY_SHOW_CARD = 30;
         #endregion
 
         #region constructor
-        public MainViewModel()
+        public MainViewModel(Data data)
         {
             FilteredListOfCards = [];
+            _listOfCards = data.ListOfCards;
+            FilterItems();
         }
         #endregion
 
         #region observable properties
         [ObservableProperty]
         public ObservableCollection<Card> filteredListOfCards;
-
-        [ObservableProperty]
-        private List<FilterViewModel> filters;
 
         [ObservableProperty]
         private bool isFocused = false;
@@ -63,7 +62,8 @@ namespace IsaacPickAndBan.ViewModels
             var newItems = await Task.Run(() =>
             {
                 return _listOfCards
-                    .Where(item => string.IsNullOrEmpty(SearchEntry) || item.Name.Contains(SearchEntry, StringComparison.OrdinalIgnoreCase));
+                    .Where(item => string.IsNullOrEmpty(SearchEntry) || item.Name.Contains(SearchEntry, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
             });
 
             FilteredListOfCards.Clear();
@@ -89,7 +89,7 @@ namespace IsaacPickAndBan.ViewModels
         {
             IsFocused = false;
             IsFlipped = false;
-            FocusedCard = null;
+            FocusedCard = default;
         }
         #endregion
 

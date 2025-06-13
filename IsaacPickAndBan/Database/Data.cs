@@ -4,27 +4,27 @@ using System.Text.Json.Serialization;
 
 namespace IsaacPickAndBan.Database
 {
-    public static class Data
+    public class Data
     {
-        public static List<Card> ListOfCards { get; set; }
+        public List<Card> ListOfCards { get; private set; } = [];
 
-        public static async Task InitDatabase()
+        public async Task InitializeAsync()
         {
             using Stream stream = await FileSystem.OpenAppPackageFileAsync("cards.json");
             using StreamReader reader = new(stream);
-            string jsonText = reader.ReadToEnd();
-
+            string jsonText = await reader.ReadToEndAsync();
 
             JsonSerializerOptions options = new()
             {
                 Converters = { new JsonStringEnumConverter() }
             };
 
-            ListOfCards = JsonSerializer.Deserialize<List<Card>>(jsonText, options);
+            var deserializedCards = JsonSerializer.Deserialize<List<Card>>(jsonText, options) ?? new List<Card>();
 
-            foreach (var card in ListOfCards)
+            foreach (var card in deserializedCards)
             {
                 card.GenerateImage();
+                ListOfCards.Add(card);
             }
         }
     }
