@@ -16,14 +16,5 @@ namespace IsaacPickAndBan
             BindingContext = _viewModel;
         }
         #endregion
-
-        #region methods
-        private async void FlipCard(object sender, EventArgs e)
-        {
-            await cardFrame.ScaleTo(1.02, 0, Easing.Linear);
-            _viewModel.FlipCard();
-            await cardFrame.ScaleTo(1.0, 200, Easing.BounceOut);
-        }
-        #endregion
     }
 }

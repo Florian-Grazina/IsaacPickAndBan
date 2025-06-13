@@ -1,99 +1,43 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using IsaacPickAndBan.Database;
-using IsaacPickAndBan.Models;
-using System.Collections.ObjectModel;
+using IsaacPickAndBan.Views;
 
 namespace IsaacPickAndBan.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
         #region fields
-        private readonly IEnumerable<Card> _listOfCards;
-        private const int DELAY_SHOW_CARD = 20;
+        private readonly CardsArchiveViewModel _cardsArchiveViewModel;
         #endregion
 
         #region constructor
-        public MainViewModel(Data data)
+        public MainViewModel(CardsArchiveViewModel cardsArchiveViewModel)
         {
-            FilteredListOfCards = [];
-            _listOfCards = data.ListOfCards;
+            _cardsArchiveViewModel = cardsArchiveViewModel;
+            OpenCardsArchive();
         }
         #endregion
 
         #region observable properties
         [ObservableProperty]
-        public ObservableCollection<Card> filteredListOfCards;
-
-        [ObservableProperty]
-        private bool isFocused = false;
-
-        [ObservableProperty]
-        private bool isFlipped = false;
-
-        [ObservableProperty]
-        private Card focusedCard;
-
-        private string searchEntry = string.Empty;
-
-        public string SearchEntry
-        {
-            get => searchEntry;
-            set
-            {
-                searchEntry = value;
-                FilterItems();
-            }
-        }
+        private ContentView? activeContentView;
         #endregion
 
         #region properties
         #endregion
 
         #region public methods
-        public void FlipCard()
+        [RelayCommand]
+        public void OpenCardsArchive()
         {
-            IsFlipped = !IsFlipped;
-        }
-
-        public async void FilterItems()
-        {
-            var newItems = await Task.Run(() =>
-            {
-                return _listOfCards
-                    .Where(item => string.IsNullOrEmpty(SearchEntry) || item.Name.Contains(SearchEntry, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-            });
-
-            FilteredListOfCards.Clear();
-
-            foreach (Card item in newItems)
-            {
-                await MainThread.InvokeOnMainThreadAsync(() => FilteredListOfCards.Add(item));
-                await Task.Delay(DELAY_SHOW_CARD);
-            }
+            ActiveContentView = new CardsArchive(_cardsArchiveViewModel);
         }
         #endregion
 
         #region commands
-        [RelayCommand]
-        private void FocusingOnCard(Card focusedCard)
-        {
-            IsFocused = true;
-            FocusedCard = focusedCard;
-        }
-
-        [RelayCommand]
-        private void ClearFocus()
-        {
-            IsFocused = false;
-            IsFlipped = false;
-            FocusedCard = default;
-        }
         #endregion
 
         #region private methods
-        
         #endregion
     }
 }

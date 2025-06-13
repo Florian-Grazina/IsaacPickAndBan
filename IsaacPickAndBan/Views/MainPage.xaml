@@ -20,72 +20,27 @@
         <Rectangle Fill="Black"
                    Opacity="0.3" />
 
-        <ScrollView>
-            <StackLayout Margin="0,0,0,60">
+        
+        <!--CONTENT CONTROL-->
+        <ContentView Content="{Binding ActiveContentView}"/>
 
-                <!--SEARCH BAR-->
-                <Grid HeightRequest="45">
-
-                    <Rectangle Fill="black"
-                               Opacity="0.5" />
-                    <FlexLayout JustifyContent="SpaceBetween">
-                        <Entry FlexLayout.Grow="1"
-                               Placeholder="Search"
-                               PlaceholderColor="White"
-                               FontFamily="IsaacFont"
-                               FontSize="25"
-                               TextColor="White"
-                               Text="{Binding SearchEntry}" />
-                    </FlexLayout>
-                </Grid>
-
-                <!--LIST OF CARDS-->
-                <CollectionView ItemsSource="{Binding FilteredListOfCards}"
-                                RemainingItemsThreshold="20">
-
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
-                                         Span="3" />
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="model:Card">
-
-                            <Image Margin="10"
-                                   Source="{Binding MainImage}">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
-                                                          CommandParameter="{Binding .}" />
-                                </Image.GestureRecognizers>
-                            </Image>
-
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-        </ScrollView>
-
-        <!--CARD DETAILS-->
-        <Grid x:Name="cardFrame"
-              IsVisible="{Binding IsFocused}">
-            <Button BackgroundColor="Black"
-                    Opacity="0.50"
-                    CornerRadius="1"
-                    Command="{Binding ClearFocusCommand}" />
-            <Grid HeightRequest="460"
-                  Margin="30">
-                <Image Source="{Binding FocusedCard.MainImage}"
-                       IsVisible="{Binding IsFlipped, Converter={StaticResource InverseBoolConverter}}" />
-                <Image Source="{Binding FocusedCard.EthernalImage}"
-                       IsVisible="{Binding IsFlipped}" />
-                <Button BackgroundColor="Transparent"
-                        Clicked="FlipCard" />
-            </Grid>
-        </Grid>
 
         <!--MENU-->
-        <Grid>
-            <view:MenuBarContentView />
+        <Grid ColumnDefinitions="*,*"
+              HeightRequest="60"
+              VerticalOptions="End">
+            <Rectangle Grid.ColumnSpan="2"
+                       Scale="1.05"
+                       Fill="black"
+                       Opacity="0.9" />
+            <Button Text="Home"
+                    HeightRequest="50"
+                    WidthRequest="150" />
+            <!--<Button Grid.Column="1"
+         FontSize="24"
+         Text="Pick &amp; Ban"
+         HeightRequest="50"
+         WidthRequest="150"/>-->
         </Grid>
     </Grid>
 

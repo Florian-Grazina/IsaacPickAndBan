@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:model="clr-namespace:IsaacPickAndBan.Models"
+             xmlns:vm="clr-namespace:IsaacPickAndBan.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:DataType="vm:CardsArchiveViewModel"
+             x:Class="IsaacPickAndBan.Views.CardsArchive">
+    <Grid>
+        <ScrollView>
+            <StackLayout Margin="0,0,0,60">
+
+                <!--SEARCH BAR-->
+                <Grid HeightRequest="45">
+
+                    <Rectangle Fill="black"
+                               Opacity="0.5" />
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        <Entry FlexLayout.Grow="1"
+                               Placeholder="Search"
+                               PlaceholderColor="White"
+                               FontFamily="IsaacFont"
+                               FontSize="25"
+                               TextColor="White"
+                               Text="{Binding SearchEntry}" />
+                    </FlexLayout>
+                </Grid>
+
+                <!--LIST OF CARDS-->
+                <CollectionView ItemsSource="{Binding FilteredListOfCards}"
+                                RemainingItemsThreshold="20">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="3" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Card">
+
+                            <Image Margin="10"
+                                   Source="{Binding MainImage}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
+                                                          CommandParameter="{Binding .}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+        <!--CARD DETAILS-->
+        <Grid x:Name="cardFrame"
+              IsVisible="{Binding IsFocused}">
+            <Button BackgroundColor="Black"
+                    Opacity="0.50"
+                    CornerRadius="1"
+                    Command="{Binding ClearFocusCommand}" />
+            <Grid HeightRequest="460"
+                  Margin="30">
+                <Image Source="{Binding FocusedCard.MainImage}"
+                       IsVisible="{Binding IsFlipped, Converter={StaticResource InverseBoolConverter}}" />
+                <Image Source="{Binding FocusedCard.EthernalImage}"
+                       IsVisible="{Binding IsFlipped}" />
+                <Button BackgroundColor="Transparent"
+                        Clicked="FlipCard" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentView>
