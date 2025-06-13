@@ -18,11 +18,6 @@ namespace IsaacPickAndBan
         #endregion
 
         #region methods
-        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //_viewModel.ListOfCards = Data.ListOfCards.Where(card => card.Name.Contains(e.NewTextValue)).ToList();
-        }
-
         private async void FlipCard(object sender, EventArgs e)
         {
             await cardFrame.ScaleTo(1.02, 0, Easing.Linear);

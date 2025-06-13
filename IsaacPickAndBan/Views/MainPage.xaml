@@ -32,21 +32,22 @@
                         <Entry FlexLayout.Grow="1"
                                Placeholder="Search"
                                PlaceholderColor="White"
-                               TextChanged="Entry_TextChanged"
                                FontFamily="IsaacFont"
                                FontSize="25"
-                               TextColor="White" />
+                               TextColor="White" 
+                               Text="{Binding SearchEntry}"/>
                     </FlexLayout>
                 </Grid>
 
                 <!--LIST OF CARDS-->
-                <CollectionView ItemsSource="{Binding ListOfCards}" RemainingItemsThreshold="20">
-                    
+                <CollectionView ItemsSource="{Binding FilteredListOfCards}"
+                                RemainingItemsThreshold="20">
+
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"
                                          Span="3" />
                     </CollectionView.ItemsLayout>
-                    
+
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Card">
 

@@ -1,5 +1,4 @@
-﻿using Android.Widget;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using IsaacPickAndBan.Database;
 using IsaacPickAndBan.Models;
@@ -9,21 +8,21 @@ namespace IsaacPickAndBan.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
+        #region fields
+        private readonly List<Card> _listOfCards = Data.ListOfCards;
+        private const int DELAY_SHOW_CARD = 30;
+        #endregion
+
         #region constructor
         public MainViewModel()
         {
-            listOfCards = [];
-            PopulateListOfCards(Data.ListOfCards);
-            Filters = GetFilters();
+            FilteredListOfCards = [];
         }
         #endregion
 
         #region observable properties
         [ObservableProperty]
-        public ObservableCollection<Card> listOfCards;
-
-        [ObservableProperty]
-        private bool filterMenuIsOpen = false;
+        public ObservableCollection<Card> filteredListOfCards;
 
         [ObservableProperty]
         private List<FilterViewModel> filters;
@@ -45,6 +44,7 @@ namespace IsaacPickAndBan.ViewModels
             set
             {
                 searchEntry = value;
+                FilterItems();
             }
         }
         #endregion
@@ -56,6 +56,23 @@ namespace IsaacPickAndBan.ViewModels
         public void FlipCard()
         {
             IsFlipped = !IsFlipped;
+        }
+
+        public async void FilterItems()
+        {
+            var newItems = await Task.Run(() =>
+            {
+                return _listOfCards
+                    .Where(item => string.IsNullOrEmpty(SearchEntry) || item.Name.Contains(SearchEntry, StringComparison.OrdinalIgnoreCase));
+            });
+
+            FilteredListOfCards.Clear();
+
+            foreach (Card item in newItems)
+            {
+                await MainThread.InvokeOnMainThreadAsync(() => FilteredListOfCards.Add(item));
+                await Task.Delay(DELAY_SHOW_CARD);
+            }
         }
         #endregion
 
@@ -77,10 +94,7 @@ namespace IsaacPickAndBan.ViewModels
         #endregion
 
         #region private methods
-        private void PopulateListOfCards(List<Card> source)
-        {
-            ListOfCards = new(source);
-        }
+        
         #endregion
     }
 }
