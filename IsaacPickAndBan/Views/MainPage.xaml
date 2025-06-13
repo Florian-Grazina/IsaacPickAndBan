@@ -34,8 +34,8 @@
                                PlaceholderColor="White"
                                FontFamily="IsaacFont"
                                FontSize="25"
-                               TextColor="White" 
-                               Text="{Binding SearchEntry}"/>
+                               TextColor="White"
+                               Text="{Binding SearchEntry}" />
                     </FlexLayout>
                 </Grid>
 
@@ -51,15 +51,13 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Card">
 
-                            <Grid Padding="7">
-
-                                <Image x:Name="MainImage"
-                                       Source="{Binding MainImage}" />
-                                <!--<Button BackgroundColor="Transparent"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
-                                        CommandParameter="{Binding .}"
-                                        Margin="5" />-->
-                            </Grid>
+                            <Image Margin="10"
+                                   Source="{Binding MainImage}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
+                                                          CommandParameter="{Binding .}" />
+                                </Image.GestureRecognizers>
+                            </Image>
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
