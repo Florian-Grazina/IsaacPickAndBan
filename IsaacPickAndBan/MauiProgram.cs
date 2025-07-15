@@ -1,6 +1,7 @@
 ﻿using IsaacPickAndBan.Database;
 using IsaacPickAndBan.ViewModels;
 using IsaacPickAndBan.Views;
+using IsaacPickAndBan.Views.PickAndBan;
 
 namespace IsaacPickAndBan
 {
@@ -27,6 +28,9 @@ namespace IsaacPickAndBan
 
             builder.Services.AddTransient<CardsArchive>();
             builder.Services.AddTransient<CardsArchiveViewModel>();
+
+            builder.Services.AddTransient<PickAndBanManager>();
+            builder.Services.AddTransient<PickAndBanManagerViewModel>();
 
             return builder.Build();
         }

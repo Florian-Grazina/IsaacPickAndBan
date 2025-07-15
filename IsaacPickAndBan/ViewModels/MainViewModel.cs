@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using IsaacPickAndBan.Views;
+using IsaacPickAndBan.Views.PickAndBan;
 
 namespace IsaacPickAndBan.ViewModels
 {
@@ -8,12 +9,14 @@ namespace IsaacPickAndBan.ViewModels
     {
         #region fields
         private readonly CardsArchiveViewModel _cardsArchiveViewModel;
+        private readonly PickAndBanManagerViewModel _pickAndBanManagerViewModel;
         #endregion
 
         #region constructor
-        public MainViewModel(CardsArchiveViewModel cardsArchiveViewModel)
+        public MainViewModel(CardsArchiveViewModel cardsArchiveViewModel, PickAndBanManagerViewModel pickAndBanManagerViewModel)
         {
             _cardsArchiveViewModel = cardsArchiveViewModel;
+            _pickAndBanManagerViewModel = pickAndBanManagerViewModel;
             OpenCardsArchive();
         }
         #endregion
@@ -37,7 +40,7 @@ namespace IsaacPickAndBan.ViewModels
         [RelayCommand]
         public void OpenPickAndBan()
         {
-            ActiveContentView = new PickAndBan();
+            ActiveContentView = new PickAndBanManager(_pickAndBanManagerViewModel);
         }
         #endregion
 
