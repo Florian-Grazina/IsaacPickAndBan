@@ -26,15 +26,19 @@ namespace IsaacPickAndBan.ViewModels
         #region properties
         #endregion
 
-        #region public methods
+        #region commands
         [RelayCommand]
         public void OpenCardsArchive()
         {
+            _cardsArchiveViewModel.FilteredListOfCards?.Clear();
             ActiveContentView = new CardsArchive(_cardsArchiveViewModel);
         }
-        #endregion
 
-        #region commands
+        [RelayCommand]
+        public void OpenPickAndBan()
+        {
+            ActiveContentView = new PickAndBan();
+        }
         #endregion
 
         #region private methods

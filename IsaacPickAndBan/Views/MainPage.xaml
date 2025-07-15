@@ -20,9 +20,9 @@
         <Rectangle Fill="Black"
                    Opacity="0.3" />
 
-        
+
         <!--CONTENT CONTROL-->
-        <ContentView Content="{Binding ActiveContentView}"/>
+        <ContentView Content="{Binding ActiveContentView}" />
 
 
         <!--MENU-->
@@ -35,12 +35,14 @@
                        Opacity="0.9" />
             <Button Text="Home"
                     HeightRequest="50"
-                    WidthRequest="150" />
-            <!--<Button Grid.Column="1"
-         FontSize="24"
-         Text="Pick &amp; Ban"
-         HeightRequest="50"
-         WidthRequest="150"/>-->
+                    WidthRequest="150"
+                    Command="{Binding OpenCardsArchiveCommand}"/>
+            <Button Grid.Column="1"
+                    FontSize="24"
+                    Text="Pick &amp; Ban"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    Command="{Binding OpenPickAndBanCommand}"/>
         </Grid>
     </Grid>
 
