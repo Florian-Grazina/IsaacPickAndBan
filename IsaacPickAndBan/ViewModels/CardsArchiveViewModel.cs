@@ -11,7 +11,7 @@ namespace IsaacPickAndBan.ViewModels
     {
         #region fields
         private readonly IEnumerable<Card> _listOfCards;
-        private const int DELAY_SHOW_CARD = 20;
+        private const int DELAY_SHOW_CARD = 5;
         #endregion
 
         #region constructor

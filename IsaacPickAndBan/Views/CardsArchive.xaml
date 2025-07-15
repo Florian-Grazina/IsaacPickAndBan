@@ -26,8 +26,7 @@
                 </Grid>
 
                 <!--LIST OF CARDS-->
-                <CollectionView ItemsSource="{Binding FilteredListOfCards}"
-                                RemainingItemsThreshold="20">
+                <CollectionView ItemsSource="{Binding FilteredListOfCards}">
 
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"
@@ -40,7 +39,7 @@
                             <Image Margin="10"
                                    Source="{Binding MainImage}">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=FocusingOnCardCommand}"
+                                    <TapGestureRecognizer Command="{Binding BindingContext.FocusingOnCardCommand, Source={RelativeSource AncestorType={x:Type CollectionView}}}"
                                                           CommandParameter="{Binding .}" />
                                 </Image.GestureRecognizers>
                             </Image>

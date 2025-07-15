@@ -28,10 +28,6 @@ namespace IsaacPickAndBan
             builder.Services.AddTransient<CardsArchive>();
             builder.Services.AddTransient<CardsArchiveViewModel>();
 
-#if DEBUG
-            //builder.Logging.AddDebug();
-#endif
-
             return builder.Build();
         }
     }
