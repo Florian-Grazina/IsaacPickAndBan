@@ -12,7 +12,14 @@ namespace IsaacPickAndBan.ViewModels
 
         public PickAndBanManagerViewModel()
         {
-            activeContentView = new FiltersContentView();
         }
+
+        #region public methods
+        public void LoadFilterContentView()
+        {
+            var ok = new FiltersContentView();
+            ActiveContentView = ok;
+        }
+        #endregion
     }
 }

@@ -10,21 +10,28 @@ namespace IsaacPickAndBan.Database
 
         public async Task InitializeAsync()
         {
-            using Stream stream = await FileSystem.OpenAppPackageFileAsync("cards.json");
-            using StreamReader reader = new(stream);
-            string jsonText = await reader.ReadToEndAsync();
-
-            JsonSerializerOptions options = new()
+            try
             {
-                Converters = { new JsonStringEnumConverter() }
-            };
+                using Stream stream = await FileSystem.OpenAppPackageFileAsync("cards.json");
+                using StreamReader reader = new(stream);
+                string jsonText = await reader.ReadToEndAsync();
 
-            var deserializedCards = JsonSerializer.Deserialize<List<Card>>(jsonText, options) ?? new List<Card>();
+                JsonSerializerOptions options = new()
+                {
+                    Converters = { new JsonStringEnumConverter() }
+                };
 
-            foreach (var card in deserializedCards)
+                var deserializedCards = JsonSerializer.Deserialize<List<Card>>(jsonText, options) ?? new List<Card>();
+
+                foreach (var card in deserializedCards)
+                {
+                    card.GenerateImage();
+                    ListOfCards.Add(card);
+                }
+            }
+            catch (Exception)
             {
-                card.GenerateImage();
-                ListOfCards.Add(card);
+                throw;
             }
         }
     }
