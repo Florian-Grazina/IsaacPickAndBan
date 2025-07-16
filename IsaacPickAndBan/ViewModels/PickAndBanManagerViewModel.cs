@@ -9,5 +9,10 @@ namespace IsaacPickAndBan.ViewModels
         [ObservableProperty]
         private IPickAndBanContentView? activeContentView;
         #endregion
+
+        public PickAndBanManagerViewModel()
+        {
+            activeContentView = new FiltersContentView();
+        }
     }
 }

@@ -276,6 +276,9 @@
 	  <MauiXaml Update="Views\LoadingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PickAndBan\FiltersContentView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PickAndBan\PickAndBanManager.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

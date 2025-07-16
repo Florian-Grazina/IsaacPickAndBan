@@ -1,6 +1,6 @@
 ﻿namespace IsaacPickAndBan.Views.PickAndBan
 {
-    internal class IPickAndBanContentView : ContentView
+    public interface IPickAndBanContentView : IContentView
     {
     }
 }

@@ -11,6 +11,4 @@ public partial class PickAndBanManager : ContentView
 		_viewModel = viewModel;
         InitializeComponent();
 	}
-
-
 }
