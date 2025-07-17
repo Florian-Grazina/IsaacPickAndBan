@@ -9,7 +9,6 @@ public partial class PickAndBanManager : ContentView
     public PickAndBanManager(PickAndBanManagerViewModel viewModel)
     {
         _viewModel = viewModel;
-        _viewModel.ClearData();
         BindingContext = _viewModel;
         InitializeComponent();
     }

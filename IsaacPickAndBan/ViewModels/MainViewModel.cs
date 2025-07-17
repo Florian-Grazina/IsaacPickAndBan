@@ -13,10 +13,10 @@ namespace IsaacPickAndBan.ViewModels
         #endregion
 
         #region constructor
-        public MainViewModel(CardsArchiveViewModel cardsArchiveViewModel, PickAndBanManagerViewModel pickAndBanManagerViewModel)
+        public MainViewModel(CardsArchiveManager cardsArchiveManager, PickAndBanManager pickAndBanManager)
         {
-            _cardsArchiveManager = new(cardsArchiveViewModel);
-            _pickAndBanManager = new (pickAndBanManagerViewModel);
+            _cardsArchiveManager = cardsArchiveManager;
+            _pickAndBanManager = pickAndBanManager;
             OpenCardsArchive();
         }
         #endregion

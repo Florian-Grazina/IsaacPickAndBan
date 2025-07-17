@@ -12,7 +12,6 @@ public partial class CardsArchiveManager : ContentView
     public CardsArchiveManager(CardsArchiveViewModel viewModel)
     {
         _viewModel = viewModel;
-        _viewModel.Clear();
         BindingContext = _viewModel;
         InitializeComponent();
     }
