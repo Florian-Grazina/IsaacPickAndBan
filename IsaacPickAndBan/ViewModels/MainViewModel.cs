@@ -8,15 +8,15 @@ namespace IsaacPickAndBan.ViewModels
     public partial class MainViewModel : ObservableObject
     {
         #region fields
-        private readonly CardsArchiveViewModel _cardsArchiveViewModel;
-        private readonly PickAndBanManagerViewModel _pickAndBanManagerViewModel;
+        private readonly CardsArchiveManager _cardsArchiveManager;
+        private readonly PickAndBanManager _pickAndBanManager;
         #endregion
 
         #region constructor
         public MainViewModel(CardsArchiveViewModel cardsArchiveViewModel, PickAndBanManagerViewModel pickAndBanManagerViewModel)
         {
-            _cardsArchiveViewModel = cardsArchiveViewModel;
-            _pickAndBanManagerViewModel = pickAndBanManagerViewModel;
+            _cardsArchiveManager = new(cardsArchiveViewModel);
+            _pickAndBanManager = new (pickAndBanManagerViewModel);
             OpenCardsArchive();
         }
         #endregion
@@ -33,18 +33,17 @@ namespace IsaacPickAndBan.ViewModels
         [RelayCommand]
         public void OpenCardsArchive()
         {
-            _cardsArchiveViewModel.FilteredListOfCards?.Clear();
-            ActiveContentView = new CardsArchive(_cardsArchiveViewModel);
+            ActiveContentView = _cardsArchiveManager;
         }
 
         [RelayCommand]
         public void OpenPickAndBan()
         {
-            ActiveContentView = new PickAndBanManager(_pickAndBanManagerViewModel);
+            ActiveContentView = _pickAndBanManager;
         }
         #endregion
 
-        #region private methods
+        #region public methods
         #endregion
     }
 }

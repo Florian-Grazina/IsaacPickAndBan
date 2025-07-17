@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:IsaacPickAndBan.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:DataType="vm:CardsArchiveViewModel"
-             x:Class="IsaacPickAndBan.Views.CardsArchive">
+             x:Class="IsaacPickAndBan.Views.CardsArchiveManager">
     <Grid>
         <ScrollView>
             <StackLayout Margin="0,0,0,60">

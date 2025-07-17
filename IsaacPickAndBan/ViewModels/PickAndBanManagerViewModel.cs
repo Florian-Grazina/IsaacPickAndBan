@@ -7,7 +7,7 @@ namespace IsaacPickAndBan.ViewModels
     {
         #region observable properties
         [ObservableProperty]
-        private IPickAndBanContentView? activeContentView;
+        private ContentView? pickAndBanContentView;
         #endregion
 
         public PickAndBanManagerViewModel()
@@ -17,7 +17,12 @@ namespace IsaacPickAndBan.ViewModels
         #region public methods
         public void LoadFilterContentView()
         {
-            ActiveContentView = new FiltersContentView();
+            PickAndBanContentView = new FiltersContentView();
+        }
+
+        public void ClearData()
+        {
+            PickAndBanContentView = null;
         }
         #endregion
     }

@@ -12,6 +12,8 @@ namespace IsaacPickAndBan.ViewModels
         #region fields
         private readonly IEnumerable<Card> _listOfCards;
         private const int DELAY_SHOW_CARD = 5;
+
+        private bool _isBusy;
         #endregion
 
         #region constructor
@@ -59,6 +61,11 @@ namespace IsaacPickAndBan.ViewModels
 
         public async void FilterItems()
         {
+            if (_isBusy)
+                return;
+
+            _isBusy = true;
+
             var newItems = await Task.Run(() =>
             {
                 return _listOfCards
@@ -73,6 +80,15 @@ namespace IsaacPickAndBan.ViewModels
                 await MainThread.InvokeOnMainThreadAsync(() => FilteredListOfCards.Add(item));
                 await Task.Delay(DELAY_SHOW_CARD);
             }
+
+            _isBusy = false;
+        }
+
+        public void Clear()
+        {
+            FilteredListOfCards.Clear();
+            SearchEntry = string.Empty;
+            ClearFocus();
         }
         #endregion
 

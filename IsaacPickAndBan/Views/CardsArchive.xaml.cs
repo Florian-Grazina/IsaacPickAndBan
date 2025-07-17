@@ -2,18 +2,19 @@ using IsaacPickAndBan.ViewModels;
 
 namespace IsaacPickAndBan.Views;
 
-public partial class CardsArchive : ContentView
+public partial class CardsArchiveManager : ContentView
 {
     #region properties
     private readonly CardsArchiveViewModel _viewModel;
     #endregion
 
     #region constructor
-    public CardsArchive(CardsArchiveViewModel viewModel)
+    public CardsArchiveManager(CardsArchiveViewModel viewModel)
     {
-        InitializeComponent();
         _viewModel = viewModel;
+        _viewModel.Clear();
         BindingContext = _viewModel;
+        InitializeComponent();
     }
     #endregion
 

@@ -26,7 +26,7 @@ namespace IsaacPickAndBan
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<MainViewModel>();
 
-            builder.Services.AddTransient<CardsArchive>();
+            builder.Services.AddTransient<CardsArchiveManager>();
             builder.Services.AddTransient<CardsArchiveViewModel>();
 
             builder.Services.AddTransient<PickAndBanManager>();
