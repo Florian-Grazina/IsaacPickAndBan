@@ -17,8 +17,7 @@ namespace IsaacPickAndBan.ViewModels
         #region public methods
         public void LoadFilterContentView()
         {
-            var ok = new FiltersContentView();
-            ActiveContentView = ok;
+            ActiveContentView = new FiltersContentView();
         }
         #endregion
     }

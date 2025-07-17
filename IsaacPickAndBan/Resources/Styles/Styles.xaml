@@ -29,13 +29,6 @@
                 Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
-    <Style TargetType="Label">
-        <Setter Property="FontSize"
-                Value="24" />
-        <Setter Property="FontFamily"
-                Value="IsaacFont" />
-    </Style>
-
     <Style TargetType="Button">
         <Setter Property="TextColor"
                 Value="White" />
@@ -227,7 +220,7 @@
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
-                Value="OpenSansRegular" />
+                Value="IsaacFont" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="VisualStateManager.VisualStateGroups">

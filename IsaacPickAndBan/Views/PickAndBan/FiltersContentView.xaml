@@ -4,7 +4,7 @@
              x:Class="IsaacPickAndBan.Views.PickAndBan.FiltersContentView">
     <Grid WidthRequest="500"
           HeightRequest="500">
-        <!--<Grid>
+        <Grid>
             <Rectangle HorizontalOptions="Center"
                        VerticalOptions="Center"
                        Scale="1.05"
@@ -12,6 +12,6 @@
                        Opacity="0.9" />
             <Label Text="Extension" />
 
-        </Grid>-->
+        </Grid>
     </Grid>
 </ContentView>
