@@ -1,4 +1,4 @@
-﻿
+
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using IsaacPickAndBan.Database;
@@ -10,17 +10,17 @@ namespace IsaacPickAndBan.ViewModels
     public partial class CardsArchiveViewModel : ObservableObject
     {
         #region fields
-        private readonly IEnumerable<Card> _listOfCards;
-        private const int DELAY_SHOW_CARD = 5;
+        private readonly IReadOnlyList<Card> _listOfCards;
+        private const int SEARCH_PAUSE_WAIT = 200;
 
-        private bool _isBusy;
+        private CancellationTokenSource? _searchCts;
         #endregion
 
         #region constructor
         public CardsArchiveViewModel(Data data)
         {
-            FilteredListOfCards = [];
             _listOfCards = data.ListOfCards;
+            FilteredListOfCards = new ObservableCollection<Card>(_listOfCards);
         }
         #endregion
 
@@ -37,20 +37,13 @@ namespace IsaacPickAndBan.ViewModels
         [ObservableProperty]
         private Card focusedCard;
 
+        [ObservableProperty]
         private string searchEntry = string.Empty;
 
-        public string SearchEntry
+        partial void OnSearchEntryChanged(string value)
         {
-            get => searchEntry;
-            set
-            {
-                searchEntry = value;
-                FilterItems();
-            }
+            FilterItems();
         }
-        #endregion
-
-        #region properties
         #endregion
 
         #region public methods
@@ -59,34 +52,8 @@ namespace IsaacPickAndBan.ViewModels
             IsFlipped = !IsFlipped;
         }
 
-        public async void FilterItems()
-        {
-            if (_isBusy)
-                return;
-
-            _isBusy = true;
-
-            var newItems = await Task.Run(() =>
-            {
-                return _listOfCards
-                    .Where(item => string.IsNullOrEmpty(SearchEntry) || item.Name.Contains(SearchEntry, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-            });
-
-            FilteredListOfCards.Clear();
-
-            foreach (Card item in newItems)
-            {
-                await MainThread.InvokeOnMainThreadAsync(() => FilteredListOfCards.Add(item));
-                await Task.Delay(DELAY_SHOW_CARD);
-            }
-
-            _isBusy = false;
-        }
-
         public void Clear()
         {
-            FilteredListOfCards.Clear();
             SearchEntry = string.Empty;
             ClearFocus();
         }
@@ -110,7 +77,37 @@ namespace IsaacPickAndBan.ViewModels
         #endregion
 
         #region private methods
+        private async void FilterItems()
+        {
+            CancellationTokenSource cts = new();
+            CancellationTokenSource? previous = Interlocked.Exchange(ref _searchCts, cts);
+            previous?.Cancel();
+            previous?.Dispose();
 
+            try
+            {
+                await Task.Delay(SEARCH_PAUSE_WAIT, cts.Token);
+
+                string term = SearchEntry;
+                List<Card> matches = await Task.Run(() => Match(term), cts.Token);
+
+                cts.Token.ThrowIfCancellationRequested();
+
+                FilteredListOfCards = new ObservableCollection<Card>(matches);
+            }
+            catch (OperationCanceledException)
+            {
+                // the user typed somethig before the delay
+            }
+        }
+
+        private List<Card> Match(string term)
+        {
+            if (string.IsNullOrWhiteSpace(term))
+                return [.. _listOfCards];
+
+            return [.. _listOfCards.Where(card => card.Name.Contains(term, StringComparison.OrdinalIgnoreCase))];
+        }
         #endregion
     }
 }

@@ -6,49 +6,52 @@
              x:DataType="vm:CardsArchiveViewModel"
              x:Class="IsaacPickAndBan.Views.CardsArchiveManager">
     <Grid>
-        <ScrollView>
-            <StackLayout Margin="0,0,0,60">
+        <Grid RowDefinitions="45,*">
 
-                <!--SEARCH BAR-->
-                <Grid HeightRequest="45">
+            <!--SEARCH BAR-->
+            <Grid>
+                <Rectangle Fill="black"
+                           Opacity="0.5" />
+                <FlexLayout JustifyContent="SpaceBetween">
+                    <Entry FlexLayout.Grow="1"
+                           Placeholder="Search"
+                           PlaceholderColor="White"
+                           FontFamily="IsaacFont"
+                           FontSize="25"
+                           TextColor="White"
+                           Text="{Binding SearchEntry}" />
+                </FlexLayout>
+            </Grid>
 
-                    <Rectangle Fill="black"
-                               Opacity="0.5" />
-                    <FlexLayout JustifyContent="SpaceBetween">
-                        <Entry FlexLayout.Grow="1"
-                               Placeholder="Search"
-                               PlaceholderColor="White"
-                               FontFamily="IsaacFont"
-                               FontSize="25"
-                               TextColor="White"
-                               Text="{Binding SearchEntry}" />
-                    </FlexLayout>
-                </Grid>
+            <!--LIST OF CARDS-->
+            <CollectionView Grid.Row="1"
+                            Margin="0,0,0,60"
+                            ItemsSource="{Binding FilteredListOfCards}"
+                            ItemSizingStrategy="MeasureFirstItem">
 
-                <!--LIST OF CARDS-->
-                <CollectionView ItemsSource="{Binding FilteredListOfCards}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="3" />
+                </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
-                                         Span="3" />
-                    </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Card">
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="model:Card">
-
-                            <Image Margin="10"
-                                   Source="{Binding MainImage}">
+                        <Grid Margin="10"
+                              HeightRequest="150">
+                            <Image Source="{Binding MainImage}"
+                                   Aspect="AspectFit">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.FocusingOnCardCommand, Source={RelativeSource AncestorType={x:Type CollectionView}}}"
                                                           CommandParameter="{Binding .}" />
                                 </Image.GestureRecognizers>
                             </Image>
+                        </Grid>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-        </ScrollView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
 
         <!--CARD DETAILS-->
         <Grid x:Name="cardFrame"
