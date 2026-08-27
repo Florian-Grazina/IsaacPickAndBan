@@ -23,13 +23,13 @@ namespace IsaacPickAndBan.ViewModels
         #region constructor
         public FiltersContentViewModel()
         {
-            Extensions = [.. Enum.GetValues<Extension>().Select(extension => new FilterViewModel(extension, true))];
+            Extensions = [.. Enum.GetValues<Extension>().Select(extension => new ExtensionFilterViewModel(extension, true))];
         }
         #endregion
 
         #region observable properties
         [ObservableProperty]
-        private ObservableCollection<FilterViewModel> extensions;
+        private ObservableCollection<ExtensionFilterViewModel> extensions;
 
         [ObservableProperty]
         private int numberOfPlayers = 2;

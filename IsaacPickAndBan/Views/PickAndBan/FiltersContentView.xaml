@@ -28,14 +28,19 @@
                             Wrap="Wrap"
                             Direction="Row">
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="vm:FilterViewModel">
-                        <HorizontalStackLayout HeightRequest="45" FlexLayout.Basis="50%">
-                            <CheckBox IsChecked="{Binding IsActif}"/>
-                            <Label Text="{Binding Name}"
-                                       FontFamily="IsaacFont"
-                                       FontSize="20"
-                                       VerticalOptions="Center" />
-                        </HorizontalStackLayout>
+                    <DataTemplate x:DataType="vm:ExtensionFilterViewModel">
+
+                        <Button HeightRequest="45"
+                                FlexLayout.Basis="50%"
+                                Margin="2"
+                                Text="{Binding Name}"
+                                Command="{Binding ToggleCommand}"
+                                FontFamily="IsaacFont"
+                                FontSize="20"
+                                VerticalOptions="Center" 
+                                BackgroundColor="{Binding BackgroundColor}"
+                                TextColor="{Binding ForegroundColor}"/>
+
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </FlexLayout>
