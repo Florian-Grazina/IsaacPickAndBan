@@ -1,17 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:IsaacPickAndBan.Controls"
+             xmlns:vm="clr-namespace:IsaacPickAndBan.ViewModels"
+             x:DataType="vm:FiltersContentViewModel"
              x:Class="IsaacPickAndBan.Views.PickAndBan.FiltersContentView">
-    <Grid WidthRequest="500"
-          HeightRequest="500">
-        <Grid>
-            <Rectangle HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Scale="1.05"
-                       Fill="black"
-                       Opacity="0.9" />
-            <Label Text="Extension" />
 
-        </Grid>
+    <Grid Margin="15,15,15,75">
+        <Rectangle Fill="Black"
+                   Opacity="0.75"
+                   RadiusX="8"
+                   RadiusY="8" />
+
+        <VerticalStackLayout Padding="20"
+                                 Spacing="10">
+
+            <!--EXTENSIONS-->
+            <Label Text="Extensions"
+                       TextColor="White"
+                       FontFamily="IsaacFont"
+                       FontSize="28" />
+            <BoxView HeightRequest="1"
+                         Color="White"
+                         Opacity="0.4" />
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding Extensions}"
+                            Wrap="Wrap"
+                            Direction="Row">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:FilterViewModel">
+                        <HorizontalStackLayout HeightRequest="45" FlexLayout.Basis="50%">
+                            <CheckBox IsChecked="{Binding IsActif}"/>
+                            <Label Text="{Binding Name}"
+                                       FontFamily="IsaacFont"
+                                       FontSize="20"
+                                       VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+            <!--SETTINGS-->
+            <Label Text="Settings"
+                       Margin="0,15,0,0"
+                       TextColor="White"
+                       FontFamily="IsaacFont"
+                       FontSize="28" />
+            <BoxView HeightRequest="1"
+                         Color="White"
+                         Opacity="0.4" />
+
+            <controls:NumericStepControl Title="Players"
+                                             Value="{Binding NumberOfPlayers}" />
+
+            <controls:NumericStepControl Title="Rerolls"
+                                             Value="{Binding NumberOfRerolls}" />
+
+            <controls:NumericStepControl Title="Cards drawn"
+                                             Value="{Binding NumberOfCardsToDraw}" />
+
+            <controls:NumericStepControl Title="Hidden cards"
+                                             Value="{Binding NumberOfHiddenCards}" />
+
+            <controls:NumericStepControl Title="Bans"
+                                             Value="{Binding NumberOfBans}" />
+
+        </VerticalStackLayout>
     </Grid>
 </ContentView>

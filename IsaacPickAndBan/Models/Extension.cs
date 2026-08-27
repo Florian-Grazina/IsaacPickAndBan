@@ -5,15 +5,15 @@ namespace IsaacPickAndBan.Models
 {
     public enum Extension
     {
-        [Description("Base Game V2")]
+        [Description("Base")]
         b2,
-        [Description("Four Souls+ V2")]
+        [Description("Four Souls+")]
         fsp2,
-        [Description("Gold Box V2")]
+        [Description("Gold Box")]
         g2,
         [Description("Requiem")]
         r,
-        [Description("Requiem Warp Zone")]
+        [Description("Warp Zone")]
         rwz,
         [Description("Tapeworm")]
         tw

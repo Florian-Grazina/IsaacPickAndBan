@@ -264,6 +264,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\NumericStepControl.xaml.cs">
+	    <DependentUpon>NumericStepControl.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\LoadingPage.xaml.cs">
 	    <DependentUpon>LoadingPage.xaml</DependentUpon>
 	  </Compile>
@@ -274,6 +277,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoadingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\NumericStepControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PickAndBan\FiltersContentView.xaml">

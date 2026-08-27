@@ -32,6 +32,9 @@ namespace IsaacPickAndBan
             builder.Services.AddTransient<PickAndBanManager>();
             builder.Services.AddTransient<PickAndBanManagerViewModel>();
 
+            builder.Services.AddTransient<FiltersContentView>();
+            builder.Services.AddTransient<FiltersContentViewModel>();
+
             return builder.Build();
         }
     }
