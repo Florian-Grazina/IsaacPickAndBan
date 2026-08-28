@@ -12,6 +12,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <converter:InverseBoolConverter x:Key="InverseBoolConverter" />
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

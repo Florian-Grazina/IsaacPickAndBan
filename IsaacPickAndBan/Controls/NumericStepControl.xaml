@@ -12,8 +12,6 @@
 
         <Label Text="{Binding Source={x:Reference Root}, Path=Title}"
                VerticalOptions="Center"
-               TextColor="White"
-               FontFamily="IsaacFont"
                FontSize="22" />
 
         <Button Grid.Column="1"
@@ -31,8 +29,6 @@
                Text="{Binding Source={x:Reference Root}, Path=Value}"
                HorizontalTextAlignment="Center"
                VerticalOptions="Center"
-               TextColor="White"
-               FontFamily="IsaacFont"
                FontSize="26" />
 
         <Button Grid.Column="3"
@@ -42,7 +38,6 @@
                 Padding="0"
                 CornerRadius="20"
                 FontSize="26"
-                TextColor="White"
                 BackgroundColor="#404040"
                 Clicked="Button_Plus_Clicked"/>
     </Grid>
