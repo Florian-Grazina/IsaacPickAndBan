@@ -6,31 +6,33 @@
              x:DataType="vm:FiltersContentViewModel"
              x:Class="IsaacPickAndBan.Views.PickAndBan.FiltersContentView">
 
-    <Grid Margin="15,15,15,75">
-        <Rectangle Fill="Black"
+    <ScrollView>
+
+        <Grid Margin="15,15,15,75">
+            <Rectangle Fill="Black"
                    Opacity="0.75"
                    RadiusX="8"
                    RadiusY="8" />
 
-        <VerticalStackLayout Padding="20"
+            <VerticalStackLayout Padding="20"
                                  Spacing="10">
 
-            <!--EXTENSIONS-->
-            <Label Text="Extensions"
+                <!--EXTENSIONS-->
+                <Label Text="Extensions"
                        TextColor="White"
                        FontFamily="IsaacFont"
                        FontSize="28" />
-            <BoxView HeightRequest="1"
+                <BoxView HeightRequest="1"
                          Color="White"
                          Opacity="0.4" />
 
-            <FlexLayout BindableLayout.ItemsSource="{Binding Extensions}"
+                <FlexLayout BindableLayout.ItemsSource="{Binding Extensions}"
                             Wrap="Wrap"
                             Direction="Row">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="vm:ExtensionFilterViewModel">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="vm:ExtensionFilterViewModel">
 
-                        <Button HeightRequest="45"
+                            <Button HeightRequest="45"
                                 FlexLayout.Basis="50%"
                                 Margin="2"
                                 Text="{Binding Name}"
@@ -41,35 +43,37 @@
                                 BackgroundColor="{Binding BackgroundColor}"
                                 TextColor="{Binding ForegroundColor}"/>
 
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
 
-            <!--SETTINGS-->
-            <Label Text="Settings"
+                <!--SETTINGS-->
+                <Label Text="Settings"
                        Margin="0,15,0,0"
                        TextColor="White"
                        FontFamily="IsaacFont"
                        FontSize="28" />
-            <BoxView HeightRequest="1"
+                <BoxView HeightRequest="1"
                          Color="White"
                          Opacity="0.4" />
 
-            <controls:NumericStepControl Title="Players"
+                <controls:NumericStepControl Title="Players"
                                              Value="{Binding NumberOfPlayers}" />
 
-            <controls:NumericStepControl Title="Rerolls"
-                                             Value="{Binding NumberOfRerolls}" />
-
-            <controls:NumericStepControl Title="Cards drawn"
+                <controls:NumericStepControl Title="Cards drawn"
                                              Value="{Binding NumberOfCardsToDraw}" />
 
-            <controls:NumericStepControl Title="Hidden cards"
+                <controls:NumericStepControl Title="Rerolls"
+                                             Value="{Binding NumberOfRerolls}" />
+
+                <controls:NumericStepControl Title="Hidden cards"
                                              Value="{Binding NumberOfHiddenCards}" />
 
-            <controls:NumericStepControl Title="Bans"
+                <controls:NumericStepControl Title="Bans"
                                              Value="{Binding NumberOfBans}" />
 
-        </VerticalStackLayout>
-    </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
 </ContentView>

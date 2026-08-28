@@ -18,14 +18,14 @@
 
         <Button Grid.Column="1"
                 Text="-"
-                Command="{Binding DecrementCommand}"
                 WidthRequest="40"
                 HeightRequest="40"
                 Padding="0"
                 CornerRadius="20"
                 FontSize="26"
                 TextColor="White"
-                BackgroundColor="#404040" />
+                BackgroundColor="#404040"
+                Clicked="Button_Minus_Clicked"/>
 
         <Label Grid.Column="2"
                Text="{Binding Source={x:Reference Root}, Path=Value}"
@@ -37,13 +37,13 @@
 
         <Button Grid.Column="3"
                 Text="+"
-                Command="{Binding IncrementCommand}"
                 WidthRequest="40"
                 HeightRequest="40"
                 Padding="0"
                 CornerRadius="20"
                 FontSize="26"
                 TextColor="White"
-                BackgroundColor="#404040" />
+                BackgroundColor="#404040"
+                Clicked="Button_Plus_Clicked"/>
     </Grid>
 </ContentView>

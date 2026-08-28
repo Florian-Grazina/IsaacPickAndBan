@@ -33,11 +33,8 @@ public partial class NumericStepControl : ContentView
     }
     #endregion
 
-    #region commands
-    [RelayCommand]
-    private void Increment() => Value++;
-
-    [RelayCommand]
-    private void Decrement() => Value++;
+    #region events
+    private void Button_Plus_Clicked(object sender, EventArgs e) => Value++;
+    private void Button_Minus_Clicked(object sender, EventArgs e) => Value--;
     #endregion
 }
