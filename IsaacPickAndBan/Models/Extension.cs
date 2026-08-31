@@ -16,7 +16,11 @@ namespace IsaacPickAndBan.Models
         [Description("Warp Zone")]
         rwz,
         [Description("Tapeworm")]
-        tw
+        tw,
+        [Description("Anniversary")]
+        anni,
+        [Description("Summer")]
+        soi,
     }
 
     public static class EnumExtensions

@@ -18,11 +18,22 @@ public partial class CardsArchiveManager : ContentView
     #endregion
 
     #region methods
+    //private async void FlipCard(object sender, EventArgs e)
+    //{
+    //    await cardFrame.ScaleTo(1.02, 0, Easing.Linear);
+    //    _viewModel.FlipCard();
+    //    await cardFrame.ScaleTo(1.0, 200, Easing.BounceOut);
+    //}
+
     private async void FlipCard(object sender, EventArgs e)
     {
-        await cardFrame.ScaleTo(1.02, 0, Easing.Linear);
+        await focusedCard.RotateYTo(90, 120, Easing.CubicIn);
+
         _viewModel.FlipCard();
-        await cardFrame.ScaleTo(1.0, 200, Easing.BounceOut);
+
+        focusedCard.RotationY = -90;
+
+        await focusedCard.RotateYTo(0, 120, Easing.CubicOut);
     }
     #endregion
 }

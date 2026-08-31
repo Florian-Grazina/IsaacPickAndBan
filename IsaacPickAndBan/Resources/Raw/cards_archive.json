@@ -63,298 +63,334 @@
     "Id": 11,
     "Name": "eden",
     "Extension": "b2",
-    "Ethernal": ""
+    "Ethernal": null
   },
   {
     "Id": 12,
-    "Name": "bum_bo",
-    "Extension": "fsp2",
-    "Ethernal": "bag_o_trash"
-  },
-  {
-    "Id": 13,
-    "Name": "dark_judas",
-    "Extension": "fsp2",
-    "Ethernal": "dark_arts"
-  },
-  {
-    "Id": 14,
-    "Name": "guppy",
-    "Extension": "fsp2",
-    "Ethernal": "infestation"
-  },
-  {
-    "Id": 15,
-    "Name": "whore_of_babylon",
-    "Extension": "fsp2",
-    "Ethernal": "gimpy"
-  },
-  {
-    "Id": 16,
-    "Name": "bethany",
-    "Extension": "r",
-    "Ethernal": "book_of_virtues"
-  },
-  {
-    "Id": 17,
-    "Name": "jacob_and_esau",
-    "Extension": "r",
-    "Ethernal": "sibling_rivalry"
-  },
-  {
-    "Id": 18,
-    "Name": "the_broken",
-    "Extension": "r",
-    "Ethernal": "spindown_dice"
-  },
-  {
-    "Id": 19,
-    "Name": "the_dauntless",
-    "Extension": "r",
-    "Ethernal": "hypercoagulation"
-  },
-  {
-    "Id": 20,
-    "Name": "the_hoarder",
-    "Extension": "r",
-    "Ethernal": "bag_of_crafting"
-  },
-  {
-    "Id": 21,
-    "Name": "the_deceiver",
-    "Extension": "r",
-    "Ethernal": "ceremonial_blade"
-  },
-  {
-    "Id": 22,
-    "Name": "the_soiled",
-    "Extension": "r",
-    "Ethernal": "ibs"
-  },
-  {
-    "Id": 23,
-    "Name": "the_curdled",
-    "Extension": "r",
-    "Ethernal": "sumptorium"
-  },
-  {
-    "Id": 24,
-    "Name": "the_savage",
-    "Extension": "r",
-    "Ethernal": "berserk"
-  },
-  {
-    "Id": 25,
-    "Name": "the_benighted",
-    "Extension": "r",
-    "Ethernal": "hemoptysis"
-  },
-  {
-    "Id": 26,
-    "Name": "the_enigma",
-    "Extension": "r",
-    "Ethernal": "flip"
-  },
-  {
-    "Id": 27,
-    "Name": "the_capricious",
-    "Extension": "r",
-    "Ethernal": "glitch"
-  },
-  {
-    "Id": 28,
-    "Name": "the_baleful",
-    "Extension": "r",
-    "Ethernal": "soulbond"
-  },
-  {
-    "Id": 29,
-    "Name": "the_harlot",
-    "Extension": "r",
-    "Ethernal": "gello"
-  },
-  {
-    "Id": 31,
-    "Name": "the_miser",
-    "Extension": "r",
-    "Ethernal": "keepers_bargain"
-  },
-  {
-    "Id": 32,
-    "Name": "the_empty",
-    "Extension": "r",
-    "Ethernal": "abyss"
-  },
-  {
-    "Id": 33,
-    "Name": "the_fettered",
-    "Extension": "r",
-    "Ethernal": "dead_weight"
-  },
-  {
-    "Id": 34,
-    "Name": "the_zealot",
-    "Extension": "r",
-    "Ethernal": "lemegeton"
-  },
-  {
-    "Id": 35,
-    "Name": "the_deserter",
-    "Extension": "r",
-    "Ethernal": "anima_sola"
-  },
-  {
-    "Id": 36,
-    "Name": "flash_isaac",
-    "Extension": "r",
-    "Ethernal": "classic_roller"
-  },
-  {
-    "Id": 37,
     "Name": "azazel",
     "Extension": "g2",
     "Ethernal": "lord_of_the_pit"
   },
   {
-    "Id": 38,
+    "Id": 13,
     "Name": "the_lost",
     "Extension": "g2",
     "Ethernal": "holy_mantle"
   },
   {
-    "Id": 39,
+    "Id": 14,
     "Name": "the_keeper",
     "Extension": "g2",
     "Ethernal": "wooden_nickel"
   },
   {
-    "Id": 40,
+    "Id": 15,
     "Name": "apollyon",
     "Extension": "g2",
     "Ethernal": "void"
   },
   {
+    "Id": 16,
+    "Name": "bum_bo",
+    "Extension": "fsp2",
+    "Ethernal": "bag_o_trash"
+  },
+  {
+    "Id": 17,
+    "Name": "dark_judas",
+    "Extension": "fsp2",
+    "Ethernal": "dark_arts"
+  },
+  {
+    "Id": 18,
+    "Name": "guppy",
+    "Extension": "fsp2",
+    "Ethernal": "infestation"
+  },
+  {
+    "Id": 19,
+    "Name": "whore_of_babylon",
+    "Extension": "fsp2",
+    "Ethernal": "gimpy"
+  },
+  {
+    "Id": 20,
+    "Name": "bethany",
+    "Extension": "r",
+    "Ethernal": "book_of_virtues"
+  },
+  {
+    "Id": 21,
+    "Name": "the_hoarder",
+    "Extension": "r",
+    "Ethernal": "bag_of_crafting"
+  },
+  {
+    "Id": 22,
+    "Name": "the_dauntless",
+    "Extension": "r",
+    "Ethernal": "hypercoagulation"
+  },
+  {
+    "Id": 23,
+    "Name": "the_broken",
+    "Extension": "r",
+    "Ethernal": "spindown_dice"
+  },
+  {
+    "Id": 24,
+    "Name": "jacob_and_esau",
+    "Extension": "r",
+    "Ethernal": "sibling_rivalry"
+  },
+  {
+    "Id": 25,
+    "Name": "the_deceiver",
+    "Extension": "r",
+    "Ethernal": "ceremonial_blade"
+  },
+  {
+    "Id": 26,
+    "Name": "the_soiled",
+    "Extension": "r",
+    "Ethernal": "ibs"
+  },
+  {
+    "Id": 27,
+    "Name": "the_curdled",
+    "Extension": "r",
+    "Ethernal": "sumptorium"
+  },
+  {
+    "Id": 28,
+    "Name": "the_savage",
+    "Extension": "r",
+    "Ethernal": "berserk"
+  },
+  {
+    "Id": 29,
+    "Name": "the_benighted",
+    "Extension": "r",
+    "Ethernal": "hemoptysis"
+  },
+  {
+    "Id": 30,
+    "Name": "the_enigma",
+    "Extension": "r",
+    "Ethernal": "flip"
+  },
+  {
+    "Id": 31,
+    "Name": "the_capricious",
+    "Extension": "r",
+    "Ethernal": "glitch"
+  },
+  {
+    "Id": 32,
+    "Name": "the_baleful",
+    "Extension": "r",
+    "Ethernal": "soulbond"
+  },
+  {
+    "Id": 33,
+    "Name": "the_harlot",
+    "Extension": "r",
+    "Ethernal": "gello"
+  },
+  {
+    "Id": 34,
+    "Name": "the_miser",
+    "Extension": "r",
+    "Ethernal": "keepers_bargain"
+  },
+  {
+    "Id": 35,
+    "Name": "the_empty",
+    "Extension": "r",
+    "Ethernal": "abyss"
+  },
+  {
+    "Id": 36,
+    "Name": "the_fettered",
+    "Extension": "r",
+    "Ethernal": "dead_weight"
+  },
+  {
+    "Id": 37,
+    "Name": "the_zealot",
+    "Extension": "r",
+    "Ethernal": "lemegeton"
+  },
+  {
+    "Id": 38,
+    "Name": "the_deserter",
+    "Extension": "r",
+    "Ethernal": "anima_sola"
+  },
+  {
+    "Id": 39,
+    "Name": "flash_isaac",
+    "Extension": "r",
+    "Ethernal": "classic_roller"
+  },
+  {
+    "Id": 40,
+    "Name": "stacy",
+    "Extension": "soi",
+    "Ethernal": "unstable_dna"
+  },
+  {
     "Id": 41,
+    "Name": "clubby_the_seal",
+    "Extension": "soi",
+    "Ethernal": "club"
+  },
+  {
+    "Id": 42,
+    "Name": "gish",
+    "Extension": "soi",
+    "Ethernal": "ball_of_tar-updated"
+  },
+  {
+    "Id": 43,
+    "Name": "level_one_isaac",
+    "Extension": "anni",
+    "Ethernal": null
+  },
+  {
+    "Id": 44,
+    "Name": "florian",
+    "Extension": "anni",
+    "Ethernal": "game_squid"
+  },
+  {
+    "Id": 45,
+    "Name": "bumbo_the_stout",
+    "Extension": "anni",
+    "Ethernal": "bag_o_holes"
+  },
+  {
+    "Id": 46,
     "Name": "ash",
     "Extension": "rwz",
     "Ethernal": "ball_of_tumors"
   },
   {
-    "Id": 42,
+    "Id": 47,
     "Name": "steven",
     "Extension": "rwz",
     "Ethernal": "lil_steven"
   },
   {
-    "Id": 43,
+    "Id": 48,
     "Name": "bum_bo_the_weird",
     "Extension": "rwz",
     "Ethernal": "strange_marble"
   },
   {
-    "Id": 44,
+    "Id": 49,
     "Name": "edmund",
     "Extension": "rwz",
     "Ethernal": "the_real_left_hand"
   },
   {
-    "Id": 45,
+    "Id": 50,
     "Name": "abe",
     "Extension": "rwz",
     "Ethernal": "possession"
   },
   {
-    "Id": 46,
+    "Id": 51,
     "Name": "baba",
     "Extension": "rwz",
     "Ethernal": "is_you"
   },
   {
-    "Id": 47,
+    "Id": 52,
     "Name": "blind_johnny",
     "Extension": "rwz",
     "Ethernal": "johnnys_knives"
   },
   {
-    "Id": 48,
+    "Id": 53,
     "Name": "blue_archer",
     "Extension": "rwz",
     "Ethernal": "bow_and_arrow"
   },
   {
-    "Id": 49,
+    "Id": 54,
     "Name": "boyfriend",
     "Extension": "rwz",
     "Ethernal": "girlfriend"
   },
   {
-    "Id": 50,
+    "Id": 55,
     "Name": "captain_viridian",
     "Extension": "rwz",
     "Ethernal": "gravity"
   },
   {
-    "Id": 51,
+    "Id": 56,
     "Name": "crewmate",
     "Extension": "rwz",
     "Ethernal": "emergency_meeting"
   },
   {
-    "Id": 52,
+    "Id": 57,
     "Name": "guy_spelunky",
     "Extension": "rwz",
     "Ethernal": "spelunking_pack"
   },
   {
-    "Id": 53,
+    "Id": 58,
     "Name": "johnny",
     "Extension": "rwz",
     "Ethernal": "football"
   },
   {
-    "Id": 54,
+    "Id": 59,
     "Name": "pink_knight",
     "Extension": "rwz",
     "Ethernal": "lollypop"
   },
   {
-    "Id": 55,
+    "Id": 60,
     "Name": "psycho_goreman",
     "Extension": "rwz",
     "Ethernal": "hunky_boys"
   },
   {
-    "Id": 56,
+    "Id": 61,
     "Name": "quote",
     "Extension": "rwz",
     "Ethernal": "polar_star"
   },
   {
-    "Id": 57,
+    "Id": 62,
     "Name": "salad_fingers",
     "Extension": "rwz",
     "Ethernal": "rusty_spoons"
   },
   {
-    "Id": 58,
+    "Id": 63,
     "Name": "the_knight",
     "Extension": "rwz",
     "Ethernal": "focus"
   },
   {
-    "Id": 59,
+    "Id": 64,
     "Name": "the_silent",
     "Extension": "rwz",
     "Ethernal": "ring_of_the_snake"
   },
   {
-    "Id": 60,
+    "Id": 65,
     "Name": "yung_venuz",
     "Extension": "rwz",
-    "Ethernal": "pop pop"
+    "Ethernal": "pop_pop"
   },
   {
-    "Id": 61,
+    "Id": 66,
     "Name": "tapeworm",
     "Extension": "tw",
     "Ethernal": "pink_proglottid"

@@ -37,16 +37,21 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Card">
 
-                        <Grid Margin="10"
-                              HeightRequest="150">
+                        <Border Margin="10"
+                                HeightRequest="150"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 5">
+
                             <Image Source="{Binding MainImage}"
                                    Aspect="AspectFit">
+
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.FocusingOnCardCommand, Source={RelativeSource AncestorType={x:Type CollectionView}}}"
                                                           CommandParameter="{Binding .}" />
                                 </Image.GestureRecognizers>
+
                             </Image>
-                        </Grid>
+                        </Border>
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -60,15 +65,22 @@
                     Opacity="0.50"
                     CornerRadius="1"
                     Command="{Binding ClearFocusCommand}" />
-            <Grid HeightRequest="460"
-                  Margin="30">
-                <Image Source="{Binding FocusedCard.MainImage}"
-                       IsVisible="{Binding IsFlipped, Converter={StaticResource InverseBoolConverter}}" />
-                <Image Source="{Binding FocusedCard.EthernalImage}"
-                       IsVisible="{Binding IsFlipped}" />
-                <Button BackgroundColor="Transparent"
-                        Clicked="FlipCard" />
-            </Grid>
+            <Border x:Name="focusedCard"
+                    HeightRequest="453.5"
+                    Margin="30"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 10"
+                    AnchorX="0.5"
+                    AnchorY="0.5"> <!--need for animation big boy-->
+                <Grid>
+                    <Image Source="{Binding FocusedCard.MainImage}"
+                           IsVisible="{Binding IsFlipped, Converter={StaticResource InverseBoolConverter}}" />
+                    <Image Source="{Binding FocusedCard.EthernalImage}"
+                           IsVisible="{Binding IsFlipped}" />
+                    <Button BackgroundColor="Transparent"
+                            Clicked="FlipCard" />
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </ContentView>

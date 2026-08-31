@@ -12,7 +12,7 @@ namespace IsaacPickAndBan.Database
         {
             try
             {
-                using Stream stream = await FileSystem.OpenAppPackageFileAsync("cards.json");
+                using Stream stream = await FileSystem.OpenAppPackageFileAsync("cards_archive.json");
                 using StreamReader reader = new(stream);
                 string jsonText = await reader.ReadToEndAsync();
 
